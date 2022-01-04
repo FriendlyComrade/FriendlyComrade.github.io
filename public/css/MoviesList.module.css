@@ -1,0 +1,11 @@
+ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: (1fr)[5];
+      grid-template-rows: repeat(5, 1fr);
+  row-gap: 3.64583vmax;
+  -webkit-column-gap: 3.64583vmax;
+          column-gap: 3.64583vmax;
+}

@@ -1,0 +1,99 @@
+@import '../../sass/mixins';
+@import '../../sass/wrapper.scss';
+
+
+.sliderBlock {
+    margin-top: vmax(30);
+    width: 100%;
+    height: vmax(736);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+}
+
+.sliderConteiner{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+    // cursor: pointer;
+    .leftArrow, .rightArrow {
+        color: rgba(255, 255, 255, .6);
+        position: absolute;
+        z-index: 1;
+        font-size: vmax(110);
+        top: vmax(300);
+        cursor: pointer;
+    }
+    .leftArrow:hover, .rightArrow:hover {
+        color: rgba(255, 255, 255, .8);        
+    }
+    .leftArrow {
+        left: 0;
+    }
+    .rightArrow {
+        right: 0;
+    }
+}
+
+.slide, .slideActive {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: vmax(10);
+    .slideCaption {
+        position: absolute;
+        top: vmax(620);
+        left: vmax(80);
+        font-size: vmax(40);
+        font-weight: bold;
+        color: white;
+        text-shadow: vmax(1) vmax(1) vmax(15) black;
+        
+    }
+}
+
+.slide {
+    display: none;
+}
+
+.slideActive {
+    opacity: 1;
+    position: relative;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: inherit;
+        position: relative;
+    }
+}
+
+.shadow__dark, .shadow__light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;   
+    border-radius: vmax(10);
+}
+
+.shadow__dark {
+    box-shadow: inset 0 0 vmax(10) black;
+}
+
+.shadow__light {
+    box-shadow: inset 0 0 vmax(10) white;
+}
+
+

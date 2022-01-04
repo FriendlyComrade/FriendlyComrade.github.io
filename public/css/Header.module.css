@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap");
+.wrapper {
+  width: 70%;
+  height: 100%;
+}
+
+.principalHeader__light, .principalHeader__dark {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 100vmax;
+  height: 4.6875vmax;
+  margin-bottom: 1.5625vmax;
+}
+
+.principalHeader__light .wrapper, .principalHeader__dark .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.principalHeader__light .wrapper div:nth-child(1), .principalHeader__dark .wrapper div:nth-child(1) {
+  width: 8.85417vmax;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.principalHeader__light .wrapper div:nth-child(1) .logoTextDark, .principalHeader__light .wrapper div:nth-child(1) .logoTextLight, .principalHeader__dark .wrapper div:nth-child(1) .logoTextDark, .principalHeader__dark .wrapper div:nth-child(1) .logoTextLight {
+  font-size: 2.1875vmax;
+  font-weight: bold;
+  margin-bottom: 0.46875vmax;
+  margin-left: 0.52083vmax;
+  font-family: 'Moon Dance', cursive;
+}
+
+.principalHeader__light .wrapper div:nth-child(1) .logoTextLight, .principalHeader__dark .wrapper div:nth-child(1) .logoTextLight {
+  color: darkred;
+}
+
+.principalHeader__light .wrapper div:nth-child(1) .logoTextDark, .principalHeader__dark .wrapper div:nth-child(1) .logoTextDark {
+  color: #adc0ff;
+  text-shadow: 0 0 15px white;
+}
+
+.principalHeader__light .wrapper div:nth-child(2), .principalHeader__dark .wrapper div:nth-child(2) {
+  width: 13.54167vmax;
+  height: 100%;
+  display: inherit;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.principalHeader__light .wrapper .themeBtnBlock, .principalHeader__dark .wrapper .themeBtnBlock {
+  cursor: pointer;
+  border-radius: 0.15625vmax;
+  padding: 0.23438vmax;
+}
+
+.principalHeader__light .wrapper .themeButtonDark, .principalHeader__dark .wrapper .themeButtonDark {
+  width: 1.5625vmax;
+}
+
+.principalHeader__light .wrapper .themeButtonLight, .principalHeader__dark .wrapper .themeButtonLight {
+  width: 1.82292vmax;
+}
+
+.principalHeader__light {
+  -webkit-box-shadow: 0 0 0.36458vmax 0 black;
+          box-shadow: 0 0 0.36458vmax 0 black;
+}
+
+.principalHeader__dark {
+  background-color: #07101a;
+}
+
+.logo {
+  width: 40%;
+  height: 80%;
+}

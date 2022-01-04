@@ -1,0 +1,63 @@
+.movieCard {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+.movieImg {
+  height: 65%;
+  cursor: pointer;
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.26042vmax;
+}
+
+.cardTextBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-left: 1.30208vmax;
+  margin-top: 0.9375vmax;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.30208vmax;
+}
+
+.cardTextBlock p:nth-child(1) {
+  font-size: 1.14583vmax;
+  font-weight: bold;
+  margin-bottom: 0.625vmax;
+}
+
+.cardTextBlock p:nth-child(2) {
+  color: #da8920;
+}
+
+.cardTextBlock p:nth-child(2) span {
+  color: gold;
+  margin-left: 0.26042vmax;
+}

@@ -1,0 +1,72 @@
+@import '../../sass/mixins';
+@import '../../sass/wrapper.scss';
+@import url('https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap');
+
+
+.principalHeader__light, .principalHeader__dark {
+    display: flex;
+    justify-content: center;
+    max-width: vmax(1920);
+    height: vmax(90);
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div:nth-child(1){
+            width: vmax(170);
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            .logoTextDark, .logoTextLight {
+                font-size: vmax(42);
+                font-weight: bold;
+                margin-bottom: vmax(9);
+                margin-left: vmax(10);
+                font-family: 'Moon Dance', cursive;
+            }
+            .logoTextLight{
+                color: darkred;
+            }
+            .logoTextDark {
+                color: rgb(173, 192, 255);
+                text-shadow: 0 0 15px rgb(255, 255, 255);
+
+            }
+        };
+        div:nth-child(2) {
+            width: vmax(260);
+            height: 100%;
+            display: inherit;
+            justify-content: center;
+            align-items: center;
+        }
+        .themeBtnBlock {
+            cursor: pointer;
+            border-radius: vmax(3);
+            padding: vmax(4.5);
+        }
+        .themeButtonDark {
+            width: vmax(30)
+        }
+        .themeButtonLight {
+            width: vmax(35)
+        }
+    }
+}
+
+.principalHeader__light {
+    box-shadow: 0 0 vmax(4) 0 black;
+}   
+// .principalHeader__dark {
+//     background-color: #07101a;
+// }
+
+.logo {
+    width: 40%;
+    height: 80%;
+}
+
+
