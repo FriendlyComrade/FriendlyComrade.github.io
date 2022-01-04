@@ -1,0 +1,11 @@
+@import '../../sass/mixins';
+@import '../../sass/wrapper.scss';
+
+.searchResults, .searchResults__dark {
+    text-align: center;
+    font-size: vmax(24);
+    font-weight: bold;
+    &__dark {
+        color: white;
+    }
+}

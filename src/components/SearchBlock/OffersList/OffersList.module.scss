@@ -1,0 +1,100 @@
+@import '../../../sass/mixins';
+
+.searchList {
+    position: relative;
+    z-index: 10;
+}
+
+.searchList__offers {
+    background-color: white;
+    position: absolute;
+    top: vmax(-1);
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.searchList__item {
+    background: #ffffff;
+    border: vmax(1) solid rgb(206, 206, 206);
+    border-top: none;
+    width: vmax(883);
+    padding: 0;
+    &_loading,
+    &_nothing, 
+    &_error {
+        text-align: center;
+        background: #ffffff;
+        border: vmax(1) solid rgb(206, 206, 206);
+        border-top: none;
+        width: vmax(883);
+        padding: vmax(10);
+    }
+}
+
+.searchList__item:first-child {
+    padding-top: vmax(10);
+}
+
+.searchList__item:last-child,
+.searchList__item_loading:last-child,
+.searchList__item_nothing:last-child,
+.searchList__item_error:last-child{
+    border-bottom-left-radius: vmax(10);
+    border-bottom-right-radius: vmax(10);
+}
+
+.searchList__item a, .searchList__item_nothing a {
+    display: block;
+    width: 100%;
+    padding: vmax(12);
+    margin: vmax(0);
+    color: #000000;
+    font-size: vmax(16);
+    text-align: left;
+    text-decoration: none;
+}
+
+.searchList__item a:hover {
+    color: rgb(202, 0, 0);
+    text-shadow: 0 0 vmax(.5) black;
+}
+
+
+// .searchList {
+//     position: absolute;
+//     background: black;
+//     top: vmax(72);
+//     z-index: 10;
+//     width: vmax(900);
+// }
+
+// .searchList__offers {
+//     background-color:white;
+//     border: 1px solid rgb(206, 206, 206);
+//     border-top: none;
+//     display: flex;
+//     flex-direction: column;
+//     width: 100%;
+// }
+
+// .searchList__item {
+//     padding-top: vmax(15);
+//     padding-left: vmax(20);
+//     width: 100%;
+//     border: 1px solid rgb(206, 206, 206);
+//     border-top: none;
+// }
+
+// .searchList__item a {
+//     color: black;
+// }
+
+// .searchList__item a:hover {
+//     color: #000000;
+//     font-size: vmax(14);
+// }

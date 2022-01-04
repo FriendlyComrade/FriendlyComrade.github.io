@@ -1,0 +1,29 @@
+
+$type: dark;
+
+.App_dark {
+    background-color: #07101a;
+}
+
+
+body::-webkit-scrollbar {
+    @if $type == dark {
+        width: 1em; 
+    }
+} 
+
+body::-webkit-scrollbar-track {
+    @if $type == dark {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); 
+    }
+}
+
+body::-webkit-scrollbar-thumb {
+    @if $type == dark {
+        background: rgb(6,112,143);
+        background: linear-gradient(90deg, rgba(6,112,143,1) 0%, rgba(12,73,105,1) 30%, rgba(11,41,54,1) 100%);
+        outline: 1px solid black;
+        border-radius: 10px;
+    }
+
+}

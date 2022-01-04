@@ -1,0 +1,20 @@
+.App_dark {
+  background-color: #08121b;
+}
+
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #06708f;
+  background: -webkit-gradient(linear, left top, right top, from(#06708f), color-stop(30%, #0c4969), to(#0b2936));
+  background: linear-gradient(90deg, #06708f 0%, #0c4969 30%, #0b2936 100%);
+  outline: 1px solid black;
+  border-radius: 10px;
+}

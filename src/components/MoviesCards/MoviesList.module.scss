@@ -1,0 +1,24 @@
+@import '../../sass/mixins';
+@import '../../sass/wrapper.scss';
+
+.moviesBlock {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: vmax(50);
+    position: relative;
+}
+
+ul{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    row-gap: vmax(70);
+    column-gap: vmax(70);
+}
+
+
+
+
+

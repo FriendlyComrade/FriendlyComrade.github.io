@@ -1,0 +1,72 @@
+@import '../../sass/mixins';
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: vmax(100);
+  }
+
+  .btnLight, .btnDark {
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: vmax(3);
+    font-size: vmax(16);
+    padding: vmax(12) vmax(12);
+  }
+  
+  .btnLight {
+    color: darkred;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: inset vmax(0) vmax(0) vmax(1) vmax(1)rgba(180, 180, 180, 0.4),
+  }
+  
+  .btnDark {
+    color: rgb(214, 222, 248);
+    text-shadow: 0 0 vmax(10) white;
+    border: 1px solid rgb(146, 148, 248);
+  }
+  
+  .btnDark:hover {
+    box-shadow: vmax(1) vmax(1) vmax(25) vmax(10) rgba(146, 148, 248, 0.4);
+  }
+
+  .btnLight:hover {
+    transform: scale(0.98);
+    box-shadow: inset vmax(0) vmax(0) vmax(3) vmax(1)rgba(180, 180, 180, 0.4),
+    // box-shadow: inset vmax(0) vmax(0) vmax(10) vmax(1)rgba(180, 180, 180, 0.4),
+  }
+
+  .btnLight:active {
+    transform: scale(0.97);
+    box-shadow: inset vmax(0) vmax(0) vmax(7) vmax(1)rgba(180, 180, 180, 0.4)
+  }
+  
+  .btnDark:before, .btnLight:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    transition: all 650ms;
+  }
+
+  .btnDark:before {
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(146, 148, 248, 0.4),
+      transparent
+    );
+  }
+
+  .btnDark:hover:before, .btnLight:hover:before {
+    left: 100%;
+  }
+
+
+
+

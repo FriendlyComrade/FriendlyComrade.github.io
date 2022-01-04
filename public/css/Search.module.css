@@ -1,0 +1,53 @@
+.searchPannel {
+  position: relative;
+}
+
+.searchInput {
+  width: 46.875vmax;
+  height: 1.71875vmax;
+  background-color: white;
+  border: 0.05208vmax solid black;
+  border-radius: 0.78125vmax;
+  padding-left: 1.30208vmax;
+  font-size: 1.04167vmax;
+}
+
+button {
+  position: absolute;
+  width: 3.125vmax;
+  height: 1.71875vmax;
+  z-index: 1;
+  right: 0;
+  border-top-right-radius: 0.78125vmax;
+  border-bottom-right-radius: 0.78125vmax;
+  background-color: rgba(105, 12, 59, 0.479);
+}
+
+button svg {
+  margin-top: 0.13021vmax;
+  width: 1.40625vmax;
+  height: 1.40625vmax;
+}
+
+button:hover {
+  background-color: rgba(105, 12, 59, 0.363);
+}
+
+input[type=text]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type=text]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  display: none;
+}

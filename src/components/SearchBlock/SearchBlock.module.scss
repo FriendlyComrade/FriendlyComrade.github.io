@@ -1,0 +1,61 @@
+@import '../../sass/mixins';
+
+
+.serchBlock {
+    position: relative;
+    width: inherit;
+    height: vmax(110);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+.searchPannel {
+    position: relative;
+}
+
+.searchInput {
+    width: vmax(900);
+    height: vmax(33);
+    background-color: white;
+    border: vmax(1) solid black;
+    border-radius: vmax(15);
+    padding-left: vmax(25);
+    font-size: vmax(20);
+}
+
+button {
+    position: absolute;
+    width: vmax(60);
+    height: vmax(33);
+    z-index: 1;
+    right: 0;
+    border-top-right-radius: vmax(15);
+    border-bottom-right-radius: vmax(15);
+    background-color: rgba(105, 12, 59, 0.479);
+    svg {
+        margin-top: vmax(2.5);
+        width: vmax(27);
+        height: vmax(27);
+        // color: whitesmoke;
+    }
+}
+
+button:hover {
+    background-color: rgba(105, 12, 59, 0.363);
+}
+
+
+input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration { display: none; }

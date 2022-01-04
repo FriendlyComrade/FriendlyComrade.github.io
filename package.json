@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@csstools/normalize.css": "^12.0.0",
     "@reduxjs/toolkit": "^1.5.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -13,10 +14,15 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-redux": "^7.1.7",
     "@types/react-router": "^5.1.17",
-    "@types/react-router-dom": "^5.3.2",
+    "eslint": "^7.11.0",
+    "history": "^5.2.0",
+    "node-sass": "^4.14.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-loader-spinner": "^4.0.0",
     "react-redux": "^7.2.0",
+    "react-router-dom": "^6.0.0-beta.8",
     "react-scripts": "4.0.3",
     "typescript": "~4.1.5"
   },
@@ -29,6 +35,16 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "overrides": [
+    {
+      "files": [
+        "**/*.stories.js"
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off"
+      }
+    }
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
@@ -40,5 +56,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "eslint-plugin-react": "^7.28.0"
   }
 }

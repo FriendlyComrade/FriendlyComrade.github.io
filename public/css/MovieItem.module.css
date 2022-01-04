@@ -1,0 +1,129 @@
+.movieCard {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+.movieCard a {
+  position: relative;
+  border-radius: 0.3125vmax;
+  height: 15.625vmax;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.movieCard a:hover {
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.movieCard .movieImg {
+  height: 100%;
+  cursor: pointer;
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.26042vmax;
+}
+
+.movieCard .cardTextBlock__light, .movieCard .cardTextBlock__dark {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-left: 0.52083vmax;
+  margin-top: 0.9375vmax;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.30208vmax;
+}
+
+.movieCard .cardTextBlock__light p:nth-child(1), .movieCard .cardTextBlock__dark p:nth-child(1) {
+  font-size: 1.04167vmax;
+  font-weight: bold;
+  margin-bottom: 0.15625vmax;
+}
+
+.movieCard .cardTextBlock__light p:nth-child(1) span, .movieCard .cardTextBlock__dark p:nth-child(1) span {
+  font-size: 0.9375vmax;
+  font-weight: inherit;
+  margin-left: 0.78125vmax;
+}
+
+.movieCard .cardTextBlock__light p:nth-child(2) span, .movieCard .cardTextBlock__dark p:nth-child(2) span {
+  margin-left: 0.26042vmax;
+}
+
+.cardTextBlock__dark p:nth-child(1) span {
+  color: #e01559;
+}
+
+.cardTextBlock__dark p:nth-child(2) {
+  color: #da8920;
+}
+
+.cardTextBlock__dark p:nth-child(2) span {
+  color: gold;
+}
+
+.cardTextBlock__light p:nth-child(1) {
+  color: black;
+}
+
+.cardTextBlock__light p:nth-child(1) span {
+  color: #aa0039;
+}
+
+.cardTextBlock__light p:nth-child(2) {
+  color: #005961;
+}
+
+.cardTextBlock__light p:nth-child(2) span {
+  color: #e66700;
+  text-shadow: 0 1px 1px black;
+}
+
+.noImage {
+  height: 100%;
+  cursor: pointer;
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.26042vmax;
+}
+
+strong {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: white;
+  font-size: 1.14583vmax;
+}

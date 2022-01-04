@@ -1,0 +1,27 @@
+$full-width: 1920;
+$full-height: 1080;
+$browser_font-size: 16;
+
+@function vmax($pixels, $content: $full-width) {
+  @return #{($pixels/$content) * 100}vmax
+};
+
+@function vmin($pixels, $content: $full-height) {
+  @return #{($pixels/$content) * 100}vmin
+};
+
+@function rem($pixels, $content: $browser_font-size) {
+    @return #{($pixels/$content)}rem
+};
+
+@function percent($pixels, $content: $browser_font-size) {
+    @return #{($pixels / $content) * 1%};
+}
+
+@function vh($pixels, $context: $full-width) {
+    @return #{($pixels/$context) * 100}vh
+};
+
+@function vw($pixels, $context: $full-width) {
+    @return #{($pixels/$context) * 100}vw
+};

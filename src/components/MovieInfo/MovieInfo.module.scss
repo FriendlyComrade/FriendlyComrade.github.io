@@ -1,0 +1,70 @@
+@import '../../sass/mixins';
+@import '../../sass/wrapper.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 400;
+    font-display: optional;
+    src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff2) format('woff2'),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff) format('woff')
+}
+
+        .movieDescBlock {
+            box-shadow: inset 0 0 vmax(15) white;
+        }
+
+        .movieDescBlock__dark {
+            box-shadow: inset 0 0 vmax(15) black;
+        }
+
+        .movieDescBlock, .movieDescBlock__dark {
+            margin-top: vmax(30);
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: vmax(800);
+            background-size: cover;
+            border-radius: vmax(10);
+            .movieInfoImg {
+                width: auto;
+                height: 55%;
+                object-fit: cover;
+                margin-top: vmax(70);
+                margin-left: vmax(30);
+                border-radius: vmax(5);
+                z-index: 1;
+                border-radius: vmax(10);
+            }
+            .movieDescText {
+                display: flex;
+                flex-direction: column;
+                margin-top: vmax(70);
+                width: 50%;
+                height: 80%;
+                font-family: 'Netflix Sans','Helvetica Neue', 'Montserat', Helvetica, Arial, sans-serif;
+                color: white;
+                line-height: 1.9em;
+                text-shadow: 0 0 vmax(20) black;
+                z-index: 1;
+                p{
+                    margin-bottom: vmax(20);
+                    font-size: vmax(22);
+                    font-weight: bold;
+                    span{
+                        margin-left: vmax(12);
+                        font-size: vmax(20);
+                        font-weight: 400;
+                    }
+                }
+                p:nth-child(1) {
+                    font-size: vmax(24);
+                }
+            }
+            .maska {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, .6);
+                border-radius: vmax(10);
+            }
+        }
