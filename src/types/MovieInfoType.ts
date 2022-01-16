@@ -10,7 +10,8 @@ export interface MovieInfoType {
     backdropPath: string,
     countries: Country[];
     voteAverage: number,
-    videos: Videos[],
+    videos: {
+        results: Videos[]},
     credits: {
         cast: Actors[],
         crew: Director[]

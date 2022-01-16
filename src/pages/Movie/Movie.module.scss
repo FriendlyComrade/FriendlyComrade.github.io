@@ -3,11 +3,12 @@
 
 .movieInfoPage {
     max-width: 100%;
-    height: vmax(879);
     background-size: vmax(879);
     background-position: center;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     .wrapper {
         display: flex;
         .loader__dark,

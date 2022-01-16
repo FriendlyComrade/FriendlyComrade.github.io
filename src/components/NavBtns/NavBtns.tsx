@@ -5,16 +5,14 @@ import scss from './NavBtns.module.scss'
 
 interface Types {
     value: string,
-    theme: string
+    theme: string,
+    handleClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-const HeaderBtns = ({value, theme}: Types): JSX.Element => {    
+const HeaderBtns = ({value, theme, handleClick}: Types): JSX.Element => {    
 
     return (
-        <div className={scss.conteiner}>
-            <a href="#" className={theme === "light" ? scss.btnLight : scss.btnDark}>{value}</a>
-        </div>
-
+        <button onClick={handleClick} className={theme === "light" ? scss.btnLight : scss.btnDark}>{value}</button>
     );
 };
 

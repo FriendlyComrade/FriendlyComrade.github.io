@@ -8,6 +8,12 @@
     src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff2) format('woff2'),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff) format('woff')
 }
 
+        .infoConteiner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .movieDescBlock {
             box-shadow: inset 0 0 vmax(15) white;
         }
@@ -25,16 +31,42 @@
             height: vmax(800);
             background-size: cover;
             border-radius: vmax(10);
-            .movieInfoImg {
-                width: auto;
-                height: 55%;
-                object-fit: cover;
-                margin-top: vmax(70);
-                margin-left: vmax(30);
-                border-radius: vmax(5);
+            .movieInfoImgWrapper {
                 z-index: 1;
-                border-radius: vmax(10);
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-left: vmax(30);
+                .movieInfoImg {
+                    width: auto;
+                    height: 55%;
+                    object-fit: cover;
+                    margin-top: vmax(70);
+                    border-radius: vmax(5);
+                    border-radius: vmax(10);
+                    box-shadow: 0 0 vmax(5) 0 rgba(255, 255, 255, 0.6)
+                }
+                .favoriteConteiner {
+                    display: flex;
+                    width: 100%;
+                    height: vmax(90);
+                    justify-content: center;
+                    align-items: center;
+                    img {
+                        width: vmax(50);
+                        height: vmax(50);
+                        cursor: pointer;
+                    }
+                    .btt {
+                        width: vmax(50);
+                        height: vmax(50);
+                        cursor: pointer;
+                        background-color: black;
+                    }
+                }
             }
+
             .movieDescText {
                 display: flex;
                 flex-direction: column;
@@ -64,7 +96,13 @@
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                background: rgba(0, 0, 0, .6);
+                background: rgba(0, 0, 0, .5);
                 border-radius: vmax(10);
             }
+        }
+
+        .trailerBlock {
+            width: 80%;
+            height: vmax(700);
+            margin: vmax(70);
         }

@@ -1,0 +1,11 @@
+@import '../../sass/mixins';
+
+.btnUp {
+    position: fixed;
+    top: 50%;
+    left: 92%;
+    width: vmax(50);
+    height: vmax(50);
+    background-color: inherit;
+    cursor: pointer;
+}

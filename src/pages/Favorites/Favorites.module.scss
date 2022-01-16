@@ -1,0 +1,22 @@
+@import '../../sass/mixins';
+
+.favoritesBlock, .favoritesBlock_nothing  {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: vmax(50);
+    h2{ font-size: vmax(24) }
+    h2 {
+        margin-bottom: vmax(40);
+    }
+    .favTextColor {color: white}
+}
+
+.favoritesBlock {
+    justify-content: center;
+}
+
+.favoritesBlock_nothing {
+    height: vmax(879);
+}

@@ -1,6 +1,10 @@
+import { nanoid } from '@reduxjs/toolkit';
 import { ChangeEvent, FormEvent, useCallback, useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router';
-import { debounce } from '../../redux/utils/utils';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import {  useNavigate } from 'react-router';
+import { addNewHistory } from '../../redux/store/slices/history/historySlice';
+import { RootState } from '../../redux/store/store';
+import { addHistoryLocalStore, debounce } from '../../redux/utils/utils';
 import OffersList from './OffersList';
 import scss from './SearchBlock.module.scss'
 
@@ -10,10 +14,18 @@ const SearchBlock = () => {
     const [inputValue, setInputValue] = useState<string>('')
     const [searchFilms, setSearchFilms] = useState<string>('')
     const [showOffers, setShowOffers] = useState<boolean>(false)
-    const navigate = useNavigate()
 
     const searchRef = useRef<HTMLDivElement>(null)
-    console.log(showOffers)
+    const inputRef = useRef<HTMLInputElement>(null)
+
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    const currentUserId = useSelector((state: RootState) => 
+        state.userSlice.id,
+        shallowEqual
+    )
+
 
     const hideOffersOnOuterClick = (event: MouseEvent) => {
         if (!searchRef?.current?.contains(event.target as Node)) {
@@ -39,15 +51,20 @@ const SearchBlock = () => {
     const handleFormSubmit = useCallback(
         (e:FormEvent<HTMLFormElement> ) => {
             e.preventDefault()
-            navigate(`/search?query=${searchFilms.trim().replaceAll(" ", "+")}`)
-            setShowOffers(false)
-            setInputValue('')
+            if (searchFilms.length) {
+                navigate(`/search?query=${searchFilms.trim().replaceAll(" ", "+")}`)
+                dispatch(addNewHistory({id: nanoid(), query: searchFilms}))
+                addHistoryLocalStore(currentUserId, searchFilms)
+                setShowOffers(false)
+                setInputValue('')
+                inputRef.current?.blur()
+            }
     },[searchFilms])
 
     return (
         <div className={scss.serchBlock}  ref={searchRef} >
             <div className={scss.wrapper}>
-                <form className={scss.searchPannel}onSubmit={handleFormSubmit}>
+                <form className={scss.searchPannel} onSubmit={handleFormSubmit}>
                     <input 
                     className={scss.searchInput} 
                     type="search" 
@@ -57,6 +74,7 @@ const SearchBlock = () => {
                         setInputValue(e.target.value)
                     }
                     onFocus={() => setShowOffers(true)}
+                    ref={inputRef}
                     />
                     <button type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" 
