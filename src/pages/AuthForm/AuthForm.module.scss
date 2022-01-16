@@ -1,0 +1,51 @@
+@import '../../sass/mixins';
+@import '../../sass/wrapper.scss';
+
+.authForm_conteiner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: vmax(879);
+}
+
+.authForm_conteiner:after {
+    display: table-cell;
+    content: "";
+    overflow-y: scroll;
+    visibility: hidden;
+}
+
+.authForm, .authForm_dark {
+    margin-bottom: vmax(200) ;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    width: vmax(500);
+    height: vmax(400);
+    border: 1px solid black;
+    &_text{
+        font-size: 50;
+    }
+    &_input_title {
+        margin-bottom: vmax(10);
+    }
+
+    &_input, &_input_dark {
+        width: vmax(350);
+    }
+
+}
+
+.authForm_input_title{
+    // font-size: vmax(30);
+}
+
+// .authForm_input{
+//     width: vmax(450);
+// }
+
+.authForm_submitAuthButton {
+
+}

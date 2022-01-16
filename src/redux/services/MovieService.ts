@@ -6,6 +6,11 @@ import {API_KEY} from '../../api/apiConfig'
 import {mapApiResponse, bigMapApiResponse} from '../../api/apiUtils';
 import { MovieInfoType } from '../../types/MovieInfoType';
 
+interface GetFound {
+    page: number,
+    title: string
+}
+
 export const moviesAPI = createApi({
     reducerPath: 'moviesAPI',
     baseQuery: fetchBaseQuery({
@@ -30,15 +35,28 @@ export const moviesAPI = createApi({
             transformResponse: (response: BigApiResponse) =>
                 bigMapApiResponse(response)
         }),
-        getFoundMovies: build.query<Movie[], string>({
-            query: (title: string) => ({
-                url: '/search/movie',
-                params: {
-                    api_key: API_KEY,
-                    query: title
-                }
+        // getFoundMovies: build.query<Movie[], string>({
+        //     query: (title: string) => ({
+        //         url: '/search/movie',
+        //         params: {
+        //             api_key: API_KEY,
+        //             query: title
+        //         }
                 
-            }),
+        //     }),
+            getFoundMovies: build.query<Movie[], GetFound>({
+                query: (arg) => {
+                    console.log(arg)
+                    const {page, title} = arg;
+                    return {
+                        url: '/search/movie',
+                        params: {
+                            api_key: API_KEY,
+                            query: title,
+                            page: page
+                        }
+                    }    
+            },
             transformResponse: (response: {results: ApiResponse[]}) => 
                 response.results.map(film => mapApiResponse(film))
         })
@@ -46,5 +64,3 @@ export const moviesAPI = createApi({
     })
 })
 export const {useGetPopularMoviesQuery, useGetMovieInfoQuery, useGetFoundMoviesQuery } = moviesAPI;
-
-// https://www.youtube.com/watch?v=m0Xb9BhfVjY

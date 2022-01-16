@@ -13,7 +13,7 @@ const OffersList = ({searchFilms}: OffersListTypes) => {
         isFetching,
         isSuccess,
         isError
-    } = useGetFoundMoviesQuery(searchFilms)
+    } = useGetFoundMoviesQuery({page:1, title:searchFilms})
 
     let content;
     if(isFetching) {

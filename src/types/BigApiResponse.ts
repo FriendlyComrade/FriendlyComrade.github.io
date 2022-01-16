@@ -27,7 +27,9 @@ export interface BigApiResponse {
     backdrop_path: string;
     vote_average: number;
     production_countries: Country[];
-    videos: Videos[],
+    videos: {
+        results: Videos[]
+    },
     credits: {
         cast: Actors[],
         crew: Director[],

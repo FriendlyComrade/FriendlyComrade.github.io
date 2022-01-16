@@ -36,33 +36,52 @@
 
             }
         };
-        div:nth-child(2) {
-            width: vmax(260);
+        .headerRightSideContent {
             height: 100%;
-            display: inherit;
-            justify-content: center;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
+            .navBtnsBlock, .navBtnsBlock_user {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .navBtnsBlock {
+                width: vmax(220);
+                margin-right: vmax(70);
+            }
+            .navBtnsBlock_user {
+                width: vmax(370);
+                margin-right: vmax(25);
+            }
+            .themeBtnBlock {                
+                cursor: pointer;
+                border-radius: vmax(3);
+                display: flex;
+                justify-self: end;
+            }
+            .themeButtonDark {
+                width: vmax(30)
+            }
+            .themeButtonLight {
+                width: vmax(35)
+            }
+            .emailStyle, .emailStyle_dark{
+                user-select:  none;
+                pointer-events: none;
+                margin-right: vmax(25);
+                font-size: vmax(20);
+            }
+            .emailStyle_dark { color: rgb(239, 230, 255)}
         }
-        .themeBtnBlock {
-            cursor: pointer;
-            border-radius: vmax(3);
-            padding: vmax(4.5);
-        }
-        .themeButtonDark {
-            width: vmax(30)
-        }
-        .themeButtonLight {
-            width: vmax(35)
-        }
+
     }
 }
 
 .principalHeader__light {
     box-shadow: 0 0 vmax(4) 0 black;
 }   
-// .principalHeader__dark {
-//     background-color: #07101a;
-// }
+
 
 .logo {
     width: 40%;

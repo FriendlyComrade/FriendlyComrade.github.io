@@ -1,19 +1,18 @@
 @import '../../sass/mixins';
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: vmax(100);
-  }
+
 
   .btnLight, .btnDark {
     text-transform: uppercase;
-    text-decoration: none;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: vmax(3);
     font-size: vmax(16);
+    // width: vmax(110);
+    // height: vmax(40);
     padding: vmax(12) vmax(12);
   }
   

@@ -18,7 +18,15 @@ ul{
     column-gap: vmax(70);
 }
 
-
+.btnUp {
+    position: fixed;
+    top: 50%;
+    left: 80%;
+    width: vmax(300);
+    height: vmax(300);
+    background-color: white;
+    border: 1px solid black;
+}
 
 
 

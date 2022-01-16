@@ -8,6 +8,7 @@ import { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeProvider';
 
 const Movie = () => {
+    console.log('gd')
     const { theme } = useContext(ThemeContext)
     const {id = 0} = useParams();
     const {data: film, isFetching, isSuccess, isError} = useGetMovieInfoQuery(+id)
@@ -20,7 +21,8 @@ const Movie = () => {
                 }
                 {isSuccess && <MovieInfo {...(film as MovieInfoType)}/>}
                 {isError && <ErrorMessage/>}
-            </div>   
+            </div>
+
         </div>
     );
 };
