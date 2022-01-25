@@ -1,11 +1,32 @@
 @import '../../sass/mixins';
+@import '../../sass/media_mixin';
 
 .btnUp {
     position: fixed;
     top: 50%;
     left: 92%;
-    width: vmax(50);
-    height: vmax(50);
+    width: vmax(40);
+    height: vmax(40);
     background-color: inherit;
     cursor: pointer;
+    @include _1280{
+        width: vmax(65);
+        height: vmax(65);
+        left: 94%;
+    }
+    @include _1024{
+        width: vmax(70);
+        height: vmax(70);
+        left: 94.5%;
+    }
+    @include _768 {
+        width: vmax(90);
+        height: vmax(90);
+        left: 92%;
+    }
+    @include _600 {
+        width: vmax(100);
+        height: vmax(100);
+        left: 85%;
+    }
 }

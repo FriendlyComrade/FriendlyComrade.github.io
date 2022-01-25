@@ -1,10 +1,260 @@
-.movieInfoPage {
-  width: 100%;
+.wrapper {
+  width: 75%;
   height: 100%;
-  background-color: black;
 }
 
-.movieInfoPage div {
+@media (max-width: 1440px) {
+  .wrapper {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .wrapper {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    width: 98%;
+  }
+}
+
+@media (max-width: 979px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+.wrapper {
+  width: 75%;
+  height: 100%;
+}
+
+@media (max-width: 1440px) {
+  .wrapper {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .wrapper {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    width: 98%;
+  }
+}
+
+@media (max-width: 979px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+.infoConteiner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.movieDescBlock {
+  -webkit-box-shadow: inset 0 0 0.78125vmax white;
+          box-shadow: inset 0 0 0.78125vmax white;
+}
+
+.movieDescBlock__dark {
+  -webkit-box-shadow: inset 0 0 0.78125vmax black;
+          box-shadow: inset 0 0 0.78125vmax black;
+}
+
+.movieDescBlock, .movieDescBlock__dark {
+  margin-top: 1.5625vmax;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  height: 41.66667vmax;
+  background-size: cover;
+  border-radius: 0.52083vmax;
+}
+
+@media (max-width: 1440px) {
+  .movieDescBlock, .movieDescBlock__dark {
+    height: 46.25vmax;
+  }
+}
+
+@media (max-width: 1280px) {
+  .movieDescBlock, .movieDescBlock__dark {
+    height: 51.5625vmax;
+  }
+}
+
+@media (max-width: 1024px) {
+  .movieDescBlock, .movieDescBlock__dark {
+    height: 56.66667vmax;
+  }
+}
+
+.movieDescBlock .movieInfoImgWrapper, .movieDescBlock__dark .movieInfoImgWrapper {
+  z-index: 1;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 1.5625vmax;
+}
+
+.movieDescBlock .movieInfoImgWrapper .movieInfoImg, .movieDescBlock__dark .movieInfoImgWrapper .movieInfoImg {
+  width: auto;
+  height: 55%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: 3.64583vmax;
+  border-radius: 0.26042vmax;
+  border-radius: 0.52083vmax;
+  -webkit-box-shadow: 0 0 0.26042vmax 0 rgba(255, 255, 255, 0.6);
+          box-shadow: 0 0 0.26042vmax 0 rgba(255, 255, 255, 0.6);
+}
+
+.movieDescBlock .movieInfoImgWrapper .favoriteConteiner, .movieDescBlock__dark .movieInfoImgWrapper .favoriteConteiner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 4.6875vmax;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 1280px) {
+  .movieDescBlock .movieInfoImgWrapper .favoriteConteiner, .movieDescBlock__dark .movieInfoImgWrapper .favoriteConteiner {
+    margin-top: 0.52083vmax;
+  }
+}
+
+.movieDescBlock .movieInfoImgWrapper .favoriteConteiner img, .movieDescBlock__dark .movieInfoImgWrapper .favoriteConteiner img {
+  width: 2.60417vmax;
+  height: 2.60417vmax;
+  cursor: pointer;
+}
+
+@media (max-width: 1280px) {
+  .movieDescBlock .movieInfoImgWrapper .favoriteConteiner img, .movieDescBlock__dark .movieInfoImgWrapper .favoriteConteiner img {
+    width: 3.125vmax;
+    height: 3.125vmax;
+  }
+}
+
+@media (max-width: 1024px) {
+  .movieDescBlock .movieInfoImgWrapper .favoriteConteiner img, .movieDescBlock__dark .movieInfoImgWrapper .favoriteConteiner img {
+    width: 3.64583vmax;
+    height: 3.64583vmax;
+  }
+}
+
+.movieDescBlock .movieDescText, .movieDescBlock__dark .movieDescText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 3.64583vmax;
+  width: 50%;
+  height: 80%;
+  font-family: 'Netflix Sans','Helvetica Neue', 'Montserat', Helvetica, Arial, sans-serif;
+  color: white;
+  line-height: 1.9em;
+  text-shadow: 0 0 1.04167vmax black;
+  z-index: 1;
+}
+
+.movieDescBlock .movieDescText p, .movieDescBlock__dark .movieDescText p {
+  margin-bottom: 1.5625vmax;
+  font-size: 1.14583vmax;
+  font-weight: bold;
+  line-height: 1.6em;
+}
+
+.movieDescBlock .movieDescText p span, .movieDescBlock__dark .movieDescText p span {
+  margin-left: 0.625vmax;
+  font-size: 1.04167vmax;
+  font-weight: 400;
+}
+
+.movieDescBlock .movieDescText p:nth-child(1), .movieDescBlock__dark .movieDescText p:nth-child(1) {
+  font-size: 1.25vmax;
+}
+
+.movieDescBlock .maska, .movieDescBlock__dark .maska {
+  position: absolute;
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.52083vmax;
+}
+
+.overviewBlock, .overviewBlock_dark {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 1.04167vmax;
+}
+
+.overviewBlock p, .overviewBlock_dark p {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 3.64583vmax 0 1.5625vmax 0;
+  font-size: 1.5625vmax;
+  font-family: 'Netflix Sans','Helvetica Neue', 'Montserat', Helvetica, Arial, sans-serif;
+}
+
+.overviewBlock span, .overviewBlock_dark span {
+  line-height: 1.6em;
+  padding: 0 10.41667vmax;
+  font-size: 1.14583vmax;
+}
+
+.overviewBlock_dark {
+  color: white;
+  text-shadow: 0 0 0.02604vmax black;
+}
+
+.trailerBlock {
+  width: 80%;
+  height: 36.45833vmax;
+  margin: 3.64583vmax;
 }

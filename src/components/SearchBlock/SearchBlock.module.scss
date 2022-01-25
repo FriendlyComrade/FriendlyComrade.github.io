@@ -1,4 +1,5 @@
 @import '../../sass/mixins';
+@import '../../sass/media_mixin';
 
 
 .serchBlock {
@@ -8,56 +9,124 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @include _1600{ height: vmax(100); }
+    @include _1440{ height: vmax(110); }
+    @include _1280{ height: vmax(150); }
+    @include _1024{ height: vmax(200); }
+    @include _886 { height: vmax(250);}
+    @include _768 { height: vmax(300);}
+    @include _600 { height: vmax(400);}
+    @include _480 { height: vmax(480);}
     .wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-    }
-}
-
-.searchPannel {
-    position: relative;
-    button {
-        position: absolute;
-        width: vmax(60);
-        height: vmax(33);
-        z-index: 1;
-        right: 0;
-        border-top-right-radius: vmax(15);
-        border-bottom-right-radius: vmax(15);
-        background-color: rgba(105, 12, 59, 0.479);
-        svg {
-            margin-top: vmax(2.5);
-            width: vmax(27);
-            height: vmax(27);
-            // color: whitesmoke;
+        .searchPannel {
+            position: relative;
+            .searchInput {              
+                width: vmax(900);
+                height: vmax(33);
+                background-color: white;
+                border: vmax(1) solid black;
+                border-radius: vmax(20);
+                padding-left: vmax(25);
+                font-size: vmax(20);
+                @include _1600{ height: vmax(40); font-size: vmax(24);}
+                @include _1440{ height: vmax(42); }
+                @include _1280{ 
+                    width: vmax(1100); 
+                    height: vmax(50); 
+                    border-radius: vmax(25);
+                    font-size: vmax(30);
+                }
+                @include _1024{ 
+                    width: vmax(1200); 
+                    height: vmax(65); 
+                    border-radius: vmax(35);
+                    font-size: vmax(37);
+                    padding-left: vmax(35);
+                }
+                @include _886{ 
+                    width: 30em; 
+                    height: vmax(75); 
+                    border-radius: vmax(35);
+                    font-size: vmax(40);
+                    padding-left: vmax(35);
+                }
+                @include _768{ 
+                    width: 30em; 
+                    height: vmax(80); 
+                    border-radius: vmax(35);
+                    font-size: vmax(40);
+                    padding-left: vmax(40);
+                }
+                @include _600{ 
+                    width: 23em; 
+                    height: vmax(90); 
+                    border-radius: vmax(50);
+                    font-size: vmax(42);
+                    padding-left: vmax(40);
+                }
+                @include _480{ 
+                    width: 14em; 
+                    height: vmax(90); 
+                    border-radius: vmax(50);
+                    font-size: 1.5em;
+                    padding-left: vmax(40);
+                }
+                @include _350{ 
+                    width: 10em; 
+                    height: vmax(90); 
+                    border-radius: vmax(50);
+                    font-size: 1.5em;
+                    padding-left: vmax(40);
+                }
+            }
+            button {
+                position: absolute;
+                width: vmax(60);
+                height: 100%;
+                z-index: 2;
+                right: 0;
+                border-top-right-radius: vmax(20);
+                border-bottom-right-radius: vmax(20);
+                background-color: rgba(105, 12, 59, 0.479);
+                @include _1600{ width: vmax(65);}
+                @include _1440{ width: vmax(70);}
+                @include _1280{ 
+                    width: vmax(90);
+                    border-top-right-radius: vmax(25);
+                    border-bottom-right-radius: vmax(25);
+                }
+                @include _1024{ 
+                    width: vmax(120);
+                    border-top-right-radius: vmax(35);
+                    border-bottom-right-radius: vmax(35);
+                }
+                @include _886 { width: vmax(130); }
+                @include _768 { width: vmax(140); }
+                @include _600{ 
+                    width: vmax(150);
+                    border-top-right-radius: vmax(50);
+                    border-bottom-right-radius: vmax(50);
+                }
+                svg {
+                    margin-top: vmax(2.5);
+                    width: vmax(27);
+                    height: vmax(27);
+                    @include _1600{ height: vmax(30); width: vmax(30);}
+                    @include _1440{ height: vmax(33); width: vmax(33);}
+                    @include _1280{ height: vmax(40); width: vmax(40);}
+                    @include _1024{ height: vmax(50); width: vmax(50);}
+                    @include _768{ height: vmax(60); width: vmax(60); }
+                    @include _600{ height: vmax(65); width: vmax(65); }
+                }
+            }
+            button:hover {
+                background-color: rgba(105, 12, 59, 0.363);
+            }
         }
-    }
-    button:hover {
-        background-color: rgba(105, 12, 59, 0.363);
+
     }
 }
-
-.searchInput {
-    width: vmax(900);
-    height: vmax(33);
-    background-color: white;
-    border: vmax(1) solid black;
-    border-radius: vmax(15);
-    padding-left: vmax(25);
-    font-size: vmax(20);
-}
-
-
-
-
-
-
-input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
-input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
-
-input::-webkit-search-decoration,
-input::-webkit-search-cancel-button,
-input::-webkit-search-results-button,
-input::-webkit-search-results-decoration { display: none; }

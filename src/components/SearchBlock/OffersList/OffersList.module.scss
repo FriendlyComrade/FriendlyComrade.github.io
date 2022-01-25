@@ -1,4 +1,5 @@
 @import '../../../sass/mixins';
+@import '../../../sass/media_mixin';
 
 .searchList {
     position: relative;
@@ -22,8 +23,13 @@
     background: #ffffff;
     border: vmax(1) solid rgb(206, 206, 206);
     border-top: none;
-    width: vmax(883);
     padding: 0;
+    width: vmax(883);
+    @include _1440 { width: vmax(890);};
+    @include _1280 { width: vmax(1085)}
+    @include _1024 { width: vmax(1185)}
+    @include _600 { width: vmax(950)}
+    @include _480 {width: vmax(680)}
     &_loading,
     &_nothing, 
     &_error {
@@ -52,49 +58,16 @@
     display: block;
     width: 100%;
     padding: vmax(12);
+    font-size: vmax(16);
     margin: vmax(0);
     color: #000000;
-    font-size: vmax(16);
     text-align: left;
     text-decoration: none;
+    @include _1440 { font-size: 18px;  padding: 15px; }
+    @include _1024 { font-size: 20px; }
 }
 
 .searchList__item a:hover {
     color: rgb(202, 0, 0);
     text-shadow: 0 0 vmax(.5) black;
 }
-
-
-// .searchList {
-//     position: absolute;
-//     background: black;
-//     top: vmax(72);
-//     z-index: 10;
-//     width: vmax(900);
-// }
-
-// .searchList__offers {
-//     background-color:white;
-//     border: 1px solid rgb(206, 206, 206);
-//     border-top: none;
-//     display: flex;
-//     flex-direction: column;
-//     width: 100%;
-// }
-
-// .searchList__item {
-//     padding-top: vmax(15);
-//     padding-left: vmax(20);
-//     width: 100%;
-//     border: 1px solid rgb(206, 206, 206);
-//     border-top: none;
-// }
-
-// .searchList__item a {
-//     color: black;
-// }
-
-// .searchList__item a:hover {
-//     color: #000000;
-//     font-size: vmax(14);
-// }

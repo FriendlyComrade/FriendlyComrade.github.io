@@ -1,6 +1,6 @@
 @import '../../sass/mixins';
 @import '../../sass/wrapper.scss';
-@import url('https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap');
+@import '../../sass/media_mixin';
 
 
 .principalHeader__light, .principalHeader__dark {
@@ -8,6 +8,12 @@
     justify-content: center;
     max-width: vmax(1920);
     height: vmax(90);
+    @include _1600 { height: vmax(100); }
+    @include _1440 { height: vmax(110); }
+    @include _1280 { height: vmax(140); }
+    @include _1024 { height: vmax(160); }
+    @include _886 { height: vmax(200); }
+    @include _600 { height: vmax(250); }
     .wrapper {
         display: flex;
         justify-content: space-between;
@@ -20,22 +26,53 @@
             align-items: center;
             cursor: pointer;
             user-select: none;
+            .logo {
+                width: 40%;
+                height: 80%;
+                @include _1600 { width: 45%; height: 85%;}
+                @include _1440 { width: 50%; height: 90%;}
+                @include _1280 { width: 60%; height: 100%;}
+                @include _1024 { width: 70%; height: 100%; margin-left: vmax(20);}
+                @include _886 { width: 80%; height: 100%; margin-left: vmax(30);}
+                @include _600 { width: 100%; height: 100%; margin-left: vmax(35);}
+                @include _480 {display: none;}
+
+            }
             .logoTextDark, .logoTextLight {
                 font-size: vmax(42);
                 font-weight: bold;
                 margin-bottom: vmax(9);
                 margin-left: vmax(10);
                 font-family: 'Moon Dance', cursive;
+                @include _1600 { font-size: vmax(48); margin-left: vmax(12);}
+                @include _1440 { font-size: vmax(52); margin-left: vmax(15);}
+                @include _1280 { font-size: vmax(63); margin-left: vmax(18);}
+                @include _1024 { font-size: vmax(80); margin-left: vmax(20);}
+                @include _886 { font-size: vmax(90); margin-left: vmax(25);}
+                @include _600 { font-size: vmax(100); margin-left: vmax(40);}
+                @include _480 { font-size: vmax(131); margin-left: vmax(60);}
+                @include _350 { font-size: vmax(141); margin-left: vmax(60);}
             }
             .logoTextLight{
                 color: darkred;
             }
             .logoTextDark {
-                color: rgb(173, 192, 255);
+                color: #adc0ff;
                 text-shadow: 0 0 15px rgb(255, 255, 255);
 
             }
         };
+
+        .headerMobileMenu, .headerMobileMenu_dark {
+            display: none;
+            width: 3em;
+            margin-left: 70%;
+            cursor: pointer;
+            @include _979 {display: flex; margin-left: 63%; }
+            @include _768 { margin-left: 63%; }
+            @include _600 { margin-left: 53%; width: 3.5em; }
+        }
+
         .headerRightSideContent {
             height: 100%;
             display: flex;
@@ -49,10 +86,20 @@
             .navBtnsBlock {
                 width: vmax(220);
                 margin-right: vmax(70);
+                @include _1700{width: vmax(250)};
+                @include _1440{width: vmax(300)};
+                @include _1280{width: vmax(330)}
+                @include _1024{width: vmax(400)};
+                @include _979{display: none};
             }
             .navBtnsBlock_user {
                 width: vmax(370);
-                margin-right: vmax(25);
+                @include _1700{width: vmax(400)};
+                @include _1600{width: vmax(450)};
+                @include _1440{width: vmax(450)};
+                @include _1280{width: vmax(550)};
+                @include _1024{width: vmax(670)};
+                @include _979{display: none};
             }
             .themeBtnBlock {                
                 cursor: pointer;
@@ -60,17 +107,25 @@
                 display: flex;
                 justify-self: end;
             }
-            .themeButtonDark {
-                width: vmax(30)
+            .themeButtonDark, .themeButtonLight {
+                width: vmax(30);
+                @include _1440{width: vmax(37)};
+                @include _1280{width: vmax(42)};
+                @include _1024{width: vmax(60); margin-right: vmax(20)};
+                @include _886{width: vmax(65); margin-right: vmax(30)};
+                @include _768{width: vmax(75); margin-right: vmax(35)};
+                @include _480 {display: none;}
             }
-            .themeButtonLight {
-                width: vmax(35)
-            }
+            .themeButtonLight { transform: scale(1.1);}
             .emailStyle, .emailStyle_dark{
                 user-select:  none;
                 pointer-events: none;
-                margin-right: vmax(25);
+                margin: 0 vmax(25);
                 font-size: vmax(20);
+                @include _1440{ font-size: vmax(24); margin: 0 vmax(30);};
+                @include _1280{ font-size: vmax(30); margin: 0 vmax(40);};
+                @include _1024{ font-size: vmax(38); margin: 0 vmax(50);};
+                @include _979{ display: none;};
             }
             .emailStyle_dark { color: rgb(239, 230, 255)}
         }
@@ -83,9 +138,5 @@
 }   
 
 
-.logo {
-    width: 40%;
-    height: 80%;
-}
 
 

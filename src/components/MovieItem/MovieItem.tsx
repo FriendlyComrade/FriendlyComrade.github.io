@@ -38,7 +38,6 @@ if (!posterPath) {
                 <Link to={path}>
                     {image}
                 </Link>
-
                     <div className={theme === "light" ? scss.cardTextBlock__light : scss.cardTextBlock__dark}>
                         <p>{title}<span>{releaseDate}</span></p>
                         <p>Rated: <span>{voteAverage}</span></p>

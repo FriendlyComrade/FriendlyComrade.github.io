@@ -1,0 +1,174 @@
+.wrapper {
+  width: 75%;
+  height: 100%;
+}
+
+@media (max-width: 1440px) {
+  .wrapper {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .wrapper {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    width: 98%;
+  }
+}
+
+@media (max-width: 979px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+.authForm_conteiner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 45.78125vmax;
+}
+
+.authForm_conteiner:after {
+  display: table-cell;
+  content: "";
+  overflow-y: scroll;
+  visibility: hidden;
+}
+
+.authForm, .authForm_dark {
+  margin-bottom: 10.41667vmax;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 26.04167vmax;
+  height: 20.83333vmax;
+  border-radius: 0.26042vmax;
+}
+
+.authForm_txt, .authForm_txt_dark, .authForm_dark_txt, .authForm_dark_txt_dark {
+  font-size: 1.61458vmax;
+  font-family: 'Moon Dance', cursive;
+}
+
+.authForm_txt_dark, .authForm_dark_txt_dark {
+  color: #46e2fd;
+}
+
+.authForm_input_title_dark, .authForm_dark_input_title_dark {
+  color: #adc0ff;
+}
+
+.authForm_txt_dark, .authForm_input_title_dark, .authForm_dark_txt_dark, .authForm_dark_input_title_dark {
+  text-shadow: 0 0 0.15625vmax white;
+}
+
+.authForm_input_title, .authForm_input_title_dark, .authForm_dark_input_title, .authForm_dark_input_title_dark {
+  margin-bottom: 0.52083vmax;
+}
+
+.authForm_input, .authForm_input_dark, .authForm_dark_input, .authForm_dark_input_dark {
+  width: 18.22917vmax;
+  height: 1.82292vmax;
+  border: 0.05208vmax solid black;
+  border-radius: 0.15625vmax;
+  padding-left: 0.78125vmax;
+  font-size: 0.9375vmax;
+  letter-spacing: 0.0625vmax;
+}
+
+.authForm_input_dark, .authForm_dark_input_dark {
+  background-color: #08121b;
+  color: whitesmoke;
+  -webkit-box-shadow: 0 0 0.15625vmax 0 #adc0ff;
+          box-shadow: 0 0 0.15625vmax 0 #adc0ff;
+}
+
+.authForm {
+  background: #f4f4f4;
+  background: -webkit-gradient(linear, left top, right top, from(#f4f4f4), color-stop(50%, #e9e9e9), to(#dadada));
+  background: linear-gradient(90deg, #f4f4f4 0%, #e9e9e9 50%, #dadada 100%);
+  -webkit-box-shadow: 0 0 0.20833vmax 0.00521vmax black;
+          box-shadow: 0 0 0.20833vmax 0.00521vmax black;
+}
+
+.authForm_dark {
+  background: #001e32;
+  background: -webkit-gradient(linear, left top, right top, from(#001422), color-stop(50%, #02233b), to(#062b46));
+  background: linear-gradient(90deg, #001422 0%, #02233b 50%, #062b46 100%);
+  -webkit-box-shadow: 0 0 0.36458vmax 0.00521vmax #46e2fd;
+          box-shadow: 0 0 0.36458vmax 0.00521vmax #46e2fd;
+}
+
+.authForm_submitAuthButton, .authForm_submitAuthButton_dark {
+  font-size: 0.9375vmax;
+  font-family: 'Montserat', Helvetica, Arial, sans-serif;
+  padding: 0.36458vmax 0.78125vmax;
+  border: 0.05208vmax solid black;
+  border-radius: 0.26042vmax;
+  color: white;
+}
+
+.authForm_submitAuthButton {
+  background: #7c7c7c;
+  background: radial-gradient(circle, #7c7c7c 0%, #414141 77%, black 100%);
+  -webkit-box-shadow: 0 0 0 0.05208vmax black;
+          box-shadow: 0 0 0 0.05208vmax black;
+}
+
+.authForm_submitAuthButton:hover {
+  background: #7c7c7c;
+  background: radial-gradient(circle, #6d6d6d 0%, #414141 77%, black 100%);
+  -webkit-box-shadow: 0 0 0 0.01562vmax black;
+          box-shadow: 0 0 0 0.01562vmax black;
+}
+
+.authForm_submitAuthButton:active {
+  background: #666565;
+  background: radial-gradient(circle, #666565 0%, #414141 86%, #282828 96%);
+  -webkit-box-shadow: inset 0 0.05208vmax 0.02604vmax black;
+          box-shadow: inset 0 0.05208vmax 0.02604vmax black;
+}
+
+.authForm_submitAuthButton_dark {
+  background: #0087bb;
+  background: radial-gradient(circle, #0087bb 0%, #006b95 50%, #005374 100%);
+  -webkit-box-shadow: 0 0 0 0.05208vmax black;
+          box-shadow: 0 0 0 0.05208vmax black;
+}
+
+.authForm_submitAuthButton_dark:hover {
+  background: #0087bb;
+  background: radial-gradient(circle, #0076a5 0%, #005f85 50%, #005374 100%);
+  -webkit-box-shadow: 0 0 0 0.01562vmax black;
+          box-shadow: 0 0 0 0.01562vmax black;
+}
+
+.authForm_submitAuthButton_dark:active {
+  background: #006991;
+  background: radial-gradient(circle, #006991 0%, #005c81 50%, #005374 75%);
+  -webkit-box-shadow: inset 0 0.05208vmax 0.02604vmax black;
+          box-shadow: inset 0 0.05208vmax 0.02604vmax black;
+}

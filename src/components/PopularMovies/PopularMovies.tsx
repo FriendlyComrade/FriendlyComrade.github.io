@@ -1,40 +1,48 @@
-import {  useEffect, useState } from "react";
+import React, {  useEffect, useState, useRef } from "react";
 import {moviesAPI} from "../../redux/services/MovieService";
 import { Movie } from "../../types/Movie";
 import MoviesList from "../MoviesCards";
+import scss from './PopularMovies.module.scss'
 
 const PopularMovies = () => {
     const [pageNumber, setPageNumber] = useState(1)
-    const {data: moviesData = []} = moviesAPI.useGetPopularMoviesQuery(pageNumber)
+    const {data: moviesData = [], isFetching} = moviesAPI.useGetPopularMoviesQuery(pageNumber)
     const [popularMovies, setPopularMovies] = useState<Movie[]>([]);
     const [fetching, setFething] = useState<boolean>(false)
 
-    useEffect (() => {
-        if (fetching) {
-            setPageNumber(prevNumber => prevNumber + 1)
-            setPopularMovies([...popularMovies, ...moviesData])
-            setFething(false)
-        }
-    }, [fetching])
+    useEffect(() => {
+      setPopularMovies([...popularMovies, ...moviesData])
+      setFething(true)
+    }, [pageNumber])
 
-    console.log(pageNumber)
-    useEffect (() => {
-        document.addEventListener('scroll', scrollHandler);
-        return function () {
-            document.removeEventListener('scroll', scrollHandler);
-        }
-    }, [])
+    const pageEnd = useRef<HTMLLIElement>(null);
 
+    useEffect(()=>{
+        if(fetching){
+          const observer = new IntersectionObserver(entries =>{
+            if(entries[0]?.isIntersecting){
+              setPageNumber(prevPage => prevPage + 1)
+              if(pageNumber >= 500){
+                if (pageEnd && pageEnd.current) {
+                    observer?.unobserve(pageEnd?.current)
+                }                
+              }
+            }
+    
+          },{ threshold: 0});
+          if (pageEnd && pageEnd.current) {
+            observer?.observe(pageEnd?.current)
+          }
 
-    const scrollHandler = (e: any): void => {
-        if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100) {
-                setFething(true)
         }
-    }
+    
+      },[fetching])
 
     return (
         <>
             <MoviesList results={popularMovies}/>
+            <li ref={pageEnd} className="observer-element"></li>
+            
         </>
     );
 };

@@ -1,7 +1,7 @@
-import Loader from "react-loader-spinner";
 import { Movie } from "../../types/Movie";
 import { TMDB_IMAGE_PATH } from '../../api/apiConfig';
 import scss from './Slider.module.scss';
+import { Link } from "react-router-dom";
 
 
 interface TypeSlider {
@@ -10,19 +10,7 @@ interface TypeSlider {
 }
 
 const ShowSlide = ({slides, current}:TypeSlider):JSX.Element => {
-
-
-        // return (
-        //     <Loader
-        //         type="Bars"
-        //         color="#00BFFF"
-        //         height={300}
-        //         width={400}
-        //         timeout={3000} //3 secs
-        //     />
-        // )
-
-
+    
     return (
         <>
             {slides.map((slide, index) =>
@@ -30,12 +18,14 @@ const ShowSlide = ({slides, current}:TypeSlider):JSX.Element => {
                 className={index === current ? scss.slideActive : scss.slide}
                 key={index}
                 >
-                    {index === current && 
-                    <img 
-                    src={`${TMDB_IMAGE_PATH}${slide.backdropPath}`} 
-                    alt={`${slide.title}-img`}
-                    /> }
-                    <p className={scss.slideCaption}>{slide.title}</p>
+                    <Link to={`/movie/${slide.id}`}>
+                        {index === current && 
+                            <img 
+                            src={`${TMDB_IMAGE_PATH}${slide.backdropPath}`} 
+                            alt={`${slide.title}-img`}
+                            /> }
+                            <p className={scss.slideCaption}>{slide.title}</p>
+                    </Link>
                 </div>
             )}
         </>

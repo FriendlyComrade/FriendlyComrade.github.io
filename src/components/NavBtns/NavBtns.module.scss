@@ -1,6 +1,5 @@
 @import '../../sass/mixins';
-
-
+@import '../../sass/media_mixin';
 
   .btnLight, .btnDark {
     text-transform: uppercase;
@@ -11,9 +10,11 @@
     align-items: center;
     border-radius: vmax(3);
     font-size: vmax(16);
-    // width: vmax(110);
-    // height: vmax(40);
     padding: vmax(12) vmax(12);
+    @include _1440 { padding: vmax(13); }
+    @include _1280 { padding: vmax(17); }
+    @include _1024 { padding: vmax(22) ; font-size: vmax(24);}
+    @include _979 { display: none;}
   }
   
   .btnLight {
@@ -34,8 +35,7 @@
 
   .btnLight:hover {
     transform: scale(0.98);
-    box-shadow: inset vmax(0) vmax(0) vmax(3) vmax(1)rgba(180, 180, 180, 0.4),
-    // box-shadow: inset vmax(0) vmax(0) vmax(10) vmax(1)rgba(180, 180, 180, 0.4),
+    box-shadow: inset vmax(0) vmax(0) vmax(3) vmax(1)rgba(180, 180, 180, 0.4)
   }
 
   .btnLight:active {

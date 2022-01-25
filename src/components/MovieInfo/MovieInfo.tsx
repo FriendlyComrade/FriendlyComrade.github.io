@@ -46,10 +46,8 @@ function MovieInfo (movie:MovieInfoType){
         } else {
             if (favoritesList.find(item => item?.movie === id)) {
                 dispatch(removeFav(id))
-                // console.log(favoritesList)
             } else {
                 dispatch(addFav({id: id, movie: id}))
-                // console.log(favoritesList)  
             }
         }
     }
@@ -89,14 +87,17 @@ function MovieInfo (movie:MovieInfoType){
                 style={{backgroundImage: `url(${TMDB_IMAGE_PATH}${backdropPath})`}}
                 >
                     <div className={scss.movieInfoImgWrapper}>
+                        
                         <img 
                         src={`${TMDB_IMAGE_PATH}${posterPath}`} 
                         className={scss.movieInfoImg}
                         alt={`${title}-img`}
                         />
+                        <h3>{title}</h3>
                         <div className={scss.favoriteConteiner}>
                             <img onClick={toggleFavorites} src={favIcon} alt="favorite-img"/>
                         </div>
+                        
                     </div>
                     <div className={scss.movieDescText}>
                         <div> <p>{title}</p> </div>
@@ -107,9 +108,21 @@ function MovieInfo (movie:MovieInfoType){
                         <p>Country: <span>{country}</span> </p>
                         <p>Director:<span>{directors}</span> </p>
                         <p>Actors: <span>{actors}</span> </p>
-                        <p>Plot: <span>{overview}</span> </p>                        
                     </div>
                     <div className={scss.maska}></div>
+                </div>
+                <div className={theme === "light" ? scss.overviewBlock : scss.overviewBlock_dark}>
+                        <p className={scss.mobMovieDesc}>Year: </p> 
+                        <span className={scss.mobMovieDesc}>{releaseDate}</span> 
+                        <p className={scss.mobMovieDesc}>Rated: </p> 
+                        <span className={scss.mobMovieDesc}>{voteAverage}</span> 
+                        <p className={scss.mobMovieDesc}>Country: </p> 
+                        <span className={scss.mobMovieDesc}>{country}</span> 
+                        <p className={scss.mobMovieDesc}>Director:</p> 
+                        <span className={scss.mobMovieDesc}>{directors}</span> 
+                    <p className={scss.movieDescActors}>Actors:</p> 
+                    <span className={scss.movieDescActors}>{actors}</span>
+                    <p>Plot</p><span>{overview}</span> 
                 </div>
                 {trailer}
             </div>

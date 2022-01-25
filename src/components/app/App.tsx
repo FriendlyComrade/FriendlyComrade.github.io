@@ -1,5 +1,5 @@
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
-import { useContext } from 'react';
+import React, { Suspense, useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeProvider';
 import {Routes, Route} from 'react-router-dom'
 import Header from '../Header';
@@ -10,8 +10,8 @@ import ScrollToTop from '../ScrollToTop/ScrollToTop';
 import AuthForm from '../../pages/AuthForm';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import Favorites from '../../pages/Favorites';
-import Movie from '../../pages/Movie/Movie';
 import History from '../../pages/History';
+import MainLoader from '../MainLoader/MainLoader';
 
 function App(): JSX.Element {
   const { theme } = useContext(ThemeContext)
@@ -28,6 +28,8 @@ function App(): JSX.Element {
 
 // alert(scrollWidth);
 
+const Movie = React.lazy(() => import('../../pages/Movie/Movie'))
+
   return (
     <div className={theme === "light" ? scss.App_light : scss.App_dark}>
       <ErrorBoundary>
@@ -43,7 +45,11 @@ function App(): JSX.Element {
               <PrivateRoute component={<History/>} redirectPath="/signin"/>
             }/>
             <Route path="/" element={<Home/>}/>
-            <Route path="/movie/:id" element={<Movie/>}/>
+            <Route path="/movie/:id" element={
+              <Suspense fallback={<MainLoader theme={theme}/>}>
+                <Movie/>
+              </Suspense>  
+            }/>
             <Route path="/search" element={<Search/>}/>
           </Routes> 
       </ErrorBoundary>

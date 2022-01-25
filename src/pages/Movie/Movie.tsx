@@ -6,6 +6,8 @@ import { MovieInfoType } from '../../types/MovieInfoType';
 import scss from './Movie.module.scss'
 import { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeProvider';
+import MainLoader from '../../components/MainLoader/MainLoader';
+
 
 const Movie = () => {
     console.log('gd')
@@ -16,8 +18,8 @@ const Movie = () => {
     return (
         <div className={scss.movieInfoPage}>
             <div className={scss.wrapper}>
-                {isFetching &&             
-                    <div className={theme === "light" ? scss.loader__light : scss.loader__dark}>Loading...</div>
+                {isFetching &&
+                    <MainLoader theme={theme}/>
                 }
                 {isSuccess && <MovieInfo {...(film as MovieInfoType)}/>}
                 {isError && <ErrorMessage/>}

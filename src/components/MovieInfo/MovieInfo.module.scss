@@ -1,27 +1,19 @@
 @import '../../sass/mixins';
 @import '../../sass/wrapper.scss';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@font-face {
-    font-family: 'Netflix Sans';
-    font-weight: 400;
-    font-display: optional;
-    src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff2) format('woff2'),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff) format('woff')
-}
+@import '../../sass/wrapper.scss';
 
         .infoConteiner {
             display: flex;
             flex-direction: column;
             align-items: center;
+            animation: appear linear .1s;
         }
-
         .movieDescBlock {
             box-shadow: inset 0 0 vmax(15) white;
         }
-
         .movieDescBlock__dark {
             box-shadow: inset 0 0 vmax(15) black;
         }
-
         .movieDescBlock, .movieDescBlock__dark {
             margin-top: vmax(30);
             position: relative;
@@ -31,13 +23,30 @@
             height: vmax(800);
             background-size: cover;
             border-radius: vmax(10);
+            @include _1440{ height: vmax(888); }
+            @include _1280{ height: vmax(990); }
+            @include _1024{ height: vmax(1088); }
+            @include _979{ height: vmax(1150); }
+            @include _768 {height: vmax(1300);}
+            @include _600 {height: vmax(1400);}
+            @include _480 {height: vmax(1700);}
             .movieInfoImgWrapper {
                 z-index: 1;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                margin-left: vmax(30);
+                margin-left: vmax(65);
+                @include _768 { margin-left: 1%; }
+                h3 {
+                    line-height: 1.3em;
+                    margin: 3%;
+                    font-size: 1.8em;
+                    font-family: 'Netflix Sans','Helvetica Neue', 'Montserat', Helvetica, Arial, sans-serif;
+                    color: white;
+                    display: none; 
+                    @include _600 {display: flex;}
+                }
                 .movieInfoImg {
                     width: auto;
                     height: 55%;
@@ -45,7 +54,8 @@
                     margin-top: vmax(70);
                     border-radius: vmax(5);
                     border-radius: vmax(10);
-                    box-shadow: 0 0 vmax(5) 0 rgba(255, 255, 255, 0.6)
+                    box-shadow: 0 0 vmax(5) 0 rgba(255, 255, 255, 0.6);
+                    @include _886 { height: 65%; }
                 }
                 .favoriteConteiner {
                     display: flex;
@@ -53,17 +63,30 @@
                     height: vmax(90);
                     justify-content: center;
                     align-items: center;
+                    @include _1440 { margin-top: vmax(5); }
+                    @include _1280 { margin-top: vmax(10); }
+                    @include _1024 { margin-top: vmax(15); }
+                    @include _979 { margin-top: vmax(20); }
+                    @include _768 { margin-top: vmax(30); }
                     img {
-                        width: vmax(50);
-                        height: vmax(50);
+                        width: vmax(45);
+                        height: vmax(45);
                         cursor: pointer;
+                        @include _1440 { width: vmax(55); height: vmax(55); };
+                        @include _1280 { width: vmax(60); height: vmax(60); };
+                        @include _1024 { width: vmax(77); height: vmax(77); };
+                        @include _979 { width: vmax(85); height: vmax(85); };
+                        @include _768 { width: vmax(95); height: vmax(95); };
+                        @include _600 { width: vmax(120); height: vmax(120); };
                     }
-                    .btt {
-                        width: vmax(50);
-                        height: vmax(50);
-                        cursor: pointer;
-                        background-color: black;
-                    }
+                }
+            }
+
+            @keyframes appear {
+                from {
+                    opacity: 0;
+                } to {
+                    opacity: 1;
                 }
             }
 
@@ -78,18 +101,31 @@
                 line-height: 1.9em;
                 text-shadow: 0 0 vmax(20) black;
                 z-index: 1;
+                @include _1280{ line-height: 2em;}
+                @include _600{ display: none;}
                 p{
-                    margin-bottom: vmax(20);
-                    font-size: vmax(22);
+                    margin-bottom: vmax(30);
+                    font-size: 1.3em;
                     font-weight: bold;
+                    @include _1440 { font-size:  1.2em;};
+                    @include _1280 { font-size: 1.3em; margin-bottom: vmax(40);}
+                    @include _1024 { font-size: 1.4em;};
+                    @include _768 { margin-bottom: vmax(60); }
                     span{
                         margin-left: vmax(12);
                         font-size: vmax(20);
                         font-weight: 400;
+                        @include _1024 { font-size: .8em;};
                     }
                 }
                 p:nth-child(1) {
-                    font-size: vmax(24);
+                    font-size: 1.5em;
+                    @include _1440 { font-size:  1.3em;};
+                    @include _1024 { font-size: 1.2em;};
+                    @include _979 { font-size: 1.5em;};
+                }
+                p:nth-child(5) {
+                    @include _768 { display: none; }                   
                 }
             }
             .maska {
@@ -101,8 +137,48 @@
             }
         }
 
+        .overviewBlock, .overviewBlock_dark {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: vmax(80);
+            @include _480{ margin-bottom: vmax(100);}
+            .mobMovieDesc { align-self: center; display: none; @include _600 { display: flex; }} 
+            .movieDescActors { display: none; @include _768 { display: flex; }}  
+            p {
+                align-self: center;
+                margin: vmax(70) 0 vmax(30) 0;
+                font-size: 1.9em;
+                font-family: 'Netflix Sans','Helvetica Neue', 'Montserat', Helvetica, Arial, sans-serif;
+                @include _1280 { font-size: 1.8em; margin: vmax(100) 0 vmax(40) 0;};
+                @include _979 { font-size: 1.9em;};
+                @include _768 { margin: vmax(120) 0 vmax(33) 0; font-size: 2em;};
+                @include _480 { margin: vmax(140) 0 vmax(35) 0;};
+                @include _480 { margin: vmax(160) 0 vmax(35) 0;};
+            }
+            span {
+                line-height: 1.7em;
+                padding: 0 vmax(250);
+                font-size: 1.4em;
+                @include _1440 { font-size:  1.3em;};
+                @include _979 { font-size: 1.5em; };
+                @include _768 { padding: 0 vmax(180);};
+                @include _600 { padding: 0 vmax(90); line-height: 1.6em; };
+                @include _480 { padding: 0 vmax(30); line-height: 1.6em; };
+            }
+        }
+
+        .overviewBlock_dark { color: white; text-shadow: 0 0 vmax(.5) black; }
+
         .trailerBlock {
             width: 80%;
             height: vmax(700);
-            margin: vmax(70);
+            margin-bottom: vmax(70);
+            @include _1440 { height: vmax(800); };
+            @include _1280 { height: vmax(880); margin: vmax(90) 0};
+            @include _1024 { margin-bottom: vmax(100);}
+            @include _979 { height: vmax(920);};
+            @include _768 { margin-bottom: vmax(150); height: vmax(820); width: 100%;};
+            @include _350 { margin-bottom: vmax(150); height: vmax(1220); width: 100%;};
         }
+
+

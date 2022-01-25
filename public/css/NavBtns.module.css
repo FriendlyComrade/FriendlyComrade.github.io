@@ -1,4 +1,7 @@
-.container {
+.btnLight, .btnDark {
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8,17 +11,28 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 5.20833vmax;
-}
-
-.btnLight, .btnDark {
-  text-transform: uppercase;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
   border-radius: 0.15625vmax;
   font-size: 0.83333vmax;
   padding: 0.625vmax 0.625vmax;
+}
+
+@media (max-width: 1440px) {
+  .btnLight, .btnDark {
+    padding: 0.67708vmax 0.67708vmax;
+  }
+}
+
+@media (max-width: 1280px) {
+  .btnLight, .btnDark {
+    padding: 0.88542vmax 0.88542vmax;
+  }
+}
+
+@media (max-width: 1024px) {
+  .btnLight, .btnDark {
+    padding: 1.14583vmax 1.14583vmax;
+    font-size: 1.25vmax;
+  }
 }
 
 .btnLight {

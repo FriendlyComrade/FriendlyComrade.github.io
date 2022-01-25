@@ -64,7 +64,7 @@ const SearchBlock = () => {
     return (
         <div className={scss.serchBlock}  ref={searchRef} >
             <div className={scss.wrapper}>
-                <form className={scss.searchPannel} onSubmit={handleFormSubmit}>
+                <form className={scss.searchPannel}onSubmit={handleFormSubmit}>
                     <input 
                     className={scss.searchInput} 
                     type="search" 
