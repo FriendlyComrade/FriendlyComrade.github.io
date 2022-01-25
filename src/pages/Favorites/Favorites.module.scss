@@ -1,4 +1,5 @@
 @import '../../sass/mixins';
+@import '../../sass/media_mixin';
 
 .favoritesBlock, .favoritesBlock_nothing  {
     width: 100%;
@@ -6,17 +7,23 @@
     align-items: center;
     flex-direction: column;
     padding-top: vmax(50);
-    h2{ font-size: vmax(24) }
+    @include _600 {padding-top: 0;}
     h2 {
-        margin-bottom: vmax(40);
+        margin-bottom: vmax(50);
+        font-size: 1.5em;
+        @include _1280{font-size: 1.4em;}
+        @include _1024{font-size: 1.3em;}
+        @include _979{font-size: 1.6em; padding-top: vmax(90); margin-bottom: vmax(90);}
+        @include _600{font-size: 1.6em; padding-top: 0; margin-bottom: vmax(90);}
     }
     .favTextColor {color: white}
 }
 
 .favoritesBlock {
     justify-content: center;
+    min-height: 90.7vh;
 }
 
 .favoritesBlock_nothing {
-    height: vmax(879);
+    min-height: 90.7vh;
 }

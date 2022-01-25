@@ -1,11 +1,13 @@
 @import '../../sass/mixins';
 @import '../../sass/wrapper.scss';
+@import '../../sass/media_mixin';
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Source+Sans+Pro:wght@600&display=swap');
 
 main {
     display: flex;
     flex-direction: column;
     width: 100%;
+    // @include _768 { width: vmax(2000);}
 }
 
 

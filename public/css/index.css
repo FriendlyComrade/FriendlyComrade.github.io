@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@font-face {
+  font-family: 'Netflix Sans';
+  font-weight: 400;
+  font-display: optional;
+  src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff2) format("woff2"), url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff) format("woff");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -48,6 +57,13 @@ img {
 
 ol, ul, li {
   list-style: none;
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+  list-style: 0;
 }
 
 a, a:visited {
@@ -87,4 +103,9 @@ input::-webkit-search-cancel-button,
 input::-webkit-search-results-button,
 input::-webkit-search-results-decoration {
   display: none;
+}
+
+.observer-element {
+  height: 0.52083vmax;
+  background: transparent;
 }

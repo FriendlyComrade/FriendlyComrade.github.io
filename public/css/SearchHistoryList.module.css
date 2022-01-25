@@ -1,0 +1,38 @@
+.search_history__list, .search_history__list_dark {
+  width: 75%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[7];
+      grid-template-rows: repeat(7, 1fr);
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  row-gap: 2.60417vmax;
+  -webkit-column-gap: 2.60417vmax;
+          column-gap: 2.60417vmax;
+}
+
+.search_history__list li, .search_history__list_dark li {
+  text-align: center;
+  padding: 0.52083vmax;
+  border-radius: 0.26042vmax;
+}
+
+.search_history__list li a, .search_history__list_dark li a {
+  font-size: 1.25vmax;
+}
+
+.search_history__list li {
+  border: 0.05208vmax solid black;
+}
+
+.search_history__list li a {
+  color: black;
+}
+
+.search_history__list_dark li {
+  border: 0.05208vmax solid white;
+}
+
+.search_history__list_dark li a {
+  color: white;
+}

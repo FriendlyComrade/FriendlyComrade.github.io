@@ -1,0 +1,25 @@
+.btnUp {
+  position: fixed;
+  top: 50%;
+  left: 92%;
+  width: 2.60417vmax;
+  height: 2.60417vmax;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+@media (max-width: 1280px) {
+  .btnUp {
+    width: 3.38542vmax;
+    height: 3.38542vmax;
+    left: 94%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .btnUp {
+    width: 3.64583vmax;
+    height: 3.64583vmax;
+    left: 94.5%;
+  }
+}

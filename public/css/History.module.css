@@ -1,0 +1,23 @@
+.history_page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 45.78125vmax;
+}
+
+.history_page__title, .history_page__title_dark {
+  padding-top: 2.60417vmax;
+  margin-bottom: 2.60417vmax;
+  font-size: 1.25vmax;
+}
+
+.history_page__title_dark {
+  color: white;
+}

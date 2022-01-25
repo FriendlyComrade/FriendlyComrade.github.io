@@ -92,9 +92,11 @@ const AuthForm = ({isLoginPage}:AuthFormProps) => {
         navigate("/signin")
     }
 
-    const submitButtonText = isLoginPage ? "SignIn" : "SignUp" 
+    const submitButtonText = isLoginPage ? "Sign In" : "Sign Up" 
     const submitAuthButton = (
-        <button className={scss.authForm_submitAuthButton} type="submit">
+        <button 
+        className={theme === "light" ? scss.authForm_submitAuthButton : scss.authForm_submitAuthButton_dark}
+        type="submit">
             {submitButtonText}
         </button>
     )
@@ -103,11 +105,14 @@ const AuthForm = ({isLoginPage}:AuthFormProps) => {
         <div className={scss.authForm_conteiner}>
             <form
                 onSubmit={onSubmitForm}
-                className={isLoginPage ? scss.authForm : scss.authForm_dark}
+                className={theme === "light" ? scss.authForm : scss.authForm_dark}
             >
-                <h3 className={scss.authForm_text}>{submitButtonText}</h3>
+                <h3 className={theme === "light" ? scss.authForm_txt : scss.authForm_txt_dark}>{submitButtonText}</h3>
                 <div>
-                    <div className={scss.authForm_input_title}>Your Name:</div>
+                    <div 
+                    className={theme === "light" ? scss.authForm_input_title : scss.authForm_input_title_dark}>
+                        Your Name:
+                    </div>
                     <input 
                         value={userName}
                         type="name"
@@ -119,7 +124,11 @@ const AuthForm = ({isLoginPage}:AuthFormProps) => {
                     />
                 </div>
                 <div>
-                    <div className={scss.authForm_input_title}>Your Email:</div>
+                    <div className={theme === "light" ? 
+                        scss.authForm_input_title : 
+                        scss.authForm_input_title_dark}>
+                            Your Email:
+                        </div>
                     <input
                         value={userEmail} 
                         type="email"
@@ -131,7 +140,11 @@ const AuthForm = ({isLoginPage}:AuthFormProps) => {
                     />
                 </div>
                 <div>
-                    <div className={scss.authForm_input_title}>Your Password:</div>
+                    <div className={theme === "light" ? 
+                        scss.authForm_input_title : 
+                        scss.authForm_input_title_dark}>
+                            Your Password:
+                    </div>
                     <input
                         value={userPassword}  
                         type="password"

@@ -1,4 +1,9 @@
+@import '../../sass/media_mixin';
 
+.App_dark, .App_light {
+  width: 100%;
+  @include _768 {width: 100%;}
+}
 
 
 .App_dark {

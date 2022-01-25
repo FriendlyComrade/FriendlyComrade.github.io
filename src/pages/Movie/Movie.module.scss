@@ -3,6 +3,7 @@
 
 .movieInfoPage {
     max-width: 100%;
+    min-height: 90.7vh;
     background-size: vmax(879);
     background-position: center;
     display: flex;
@@ -24,7 +25,10 @@
           align-self: center;
           margin: 60px auto;
           font-size: 10px;
-          position: relative;
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -50%);
           text-indent: -9999em;
           -webkit-transform: translateZ(0);
           -ms-transform: translateZ(0);

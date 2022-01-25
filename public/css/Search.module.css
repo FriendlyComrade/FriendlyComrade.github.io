@@ -1,53 +1,38 @@
-.searchPannel {
-  position: relative;
+.wrapper {
+  width: 75%;
+  height: 100%;
 }
 
-.searchInput {
-  width: 46.875vmax;
-  height: 1.71875vmax;
-  background-color: white;
-  border: 0.05208vmax solid black;
-  border-radius: 0.78125vmax;
-  padding-left: 1.30208vmax;
-  font-size: 1.04167vmax;
+@media (max-width: 1440px) {
+  .wrapper {
+    width: 80%;
+  }
 }
 
-button {
-  position: absolute;
-  width: 3.125vmax;
-  height: 1.71875vmax;
-  z-index: 1;
-  right: 0;
-  border-top-right-radius: 0.78125vmax;
-  border-bottom-right-radius: 0.78125vmax;
-  background-color: rgba(105, 12, 59, 0.479);
+@media (max-width: 1280px) {
+  .wrapper {
+    width: 90%;
+  }
 }
 
-button svg {
-  margin-top: 0.13021vmax;
-  width: 1.40625vmax;
-  height: 1.40625vmax;
+@media (max-width: 1024px) {
+  .wrapper {
+    width: 98%;
+  }
 }
 
-button:hover {
-  background-color: rgba(105, 12, 59, 0.363);
+@media (max-width: 979px) {
+  .wrapper {
+    width: 100%;
+  }
 }
 
-input[type=text]::-ms-clear {
-  display: none;
-  width: 0;
-  height: 0;
+.searchResults, .searchResults__dark {
+  text-align: center;
+  font-size: 1.25vmax;
+  font-weight: bold;
 }
 
-input[type=text]::-ms-reveal {
-  display: none;
-  width: 0;
-  height: 0;
-}
-
-input::-webkit-search-decoration,
-input::-webkit-search-cancel-button,
-input::-webkit-search-results-button,
-input::-webkit-search-results-decoration {
-  display: none;
+.searchResults__dark, .searchResults__dark__dark {
+  color: white;
 }

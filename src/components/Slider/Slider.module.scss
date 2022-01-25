@@ -1,5 +1,6 @@
 @import '../../sass/mixins';
 @import '../../sass/wrapper.scss';
+@import '../../sass/media_mixin';
 
 
 .sliderBlock {
@@ -9,6 +10,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @include _1600{ height: vmax(830); margin-top: vmax(20);}
+    @include _1440{ height: vmax(900); margin-top: vmax(20);}
+    @include _1280{ height: vmax(1010); margin-top: vmax(25);}
+    @include _1024{ height: vmax(1170); margin-top: vmax(25);}
+    @include _886{ height: vmax(1250); margin-top: vmax(30);}
+    @include _768{ height: vmax(1150); margin-top: vmax(35);}
+    @include _600{ height: vmax(1100); margin-top: vmax(40);}
+    @include _480 { height: vmax(1000); margin-top: vmax(35); }
+
     .wrapper {
         display: flex;
         justify-content: center;
@@ -26,14 +36,19 @@
     overflow: hidden;
     position: relative;
     user-select: none;
-    // cursor: pointer;
+    cursor: pointer;
     .leftArrow, .rightArrow {
         color: rgba(255, 255, 255, .6);
         position: absolute;
         z-index: 1;
         font-size: vmax(110);
-        top: vmax(300);
+        top: 50%;
+        transform: translate(0, -50%);
         cursor: pointer;
+        @include _1440{ font-size: vmax(133); }
+        @include _1280{font-size: vmax(150); }
+        @include _1024{font-size: vmax(200); }
+        @include _600{font-size: vmax(150); }
     }
     .leftArrow:hover, .rightArrow:hover {
         color: rgba(255, 255, 255, .8);        
@@ -44,6 +59,34 @@
     .rightArrow {
         right: 0;
     }
+    .sliderDotsBlock {
+        position: absolute;
+        color: white;
+        font-size: vmax(100);
+        display: flex; 
+        justify-content: space-between;
+        margin-top: vmax(650);
+        @include _1600{ margin-top: vmax(700); }
+        @include _1440{ margin-top: vmax(770); }
+        @include _1280{ margin-top: vmax(850); }
+        @include _1024{ margin-top: vmax(960); }
+        @include _480{ margin-top: 97%; }
+
+        .sliderDot, .sliderDot__active {
+            margin: vmax(5);
+            width: vmax(17);
+            height: vmax(14);           
+            border-radius: vmax(4);
+            box-shadow: 0 0 vmax(5) vmax(1) black;
+            @include _1440{ width: vmax(22); height: vmax(18); }
+            @include _1280{ width: vmax(26); height: vmax(22);  margin: vmax(7); }
+            @include _1024{ width: vmax(30); height: vmax(26);  margin: vmax(10); }
+            @include _886{ width: vmax(30); height: vmax(26);  margin: vmax(12); }
+            @include _480{width: vmax(30); height: vmax(26);  margin: vmax(12);}
+        }
+        .sliderDot { background-color: rgba(255, 255, 255, 0.7); }
+        .sliderDot__active { background-color: darkred; }
+    }
 }
 
 .slide, .slideActive {
@@ -53,13 +96,20 @@
     border-radius: vmax(10);
     .slideCaption {
         position: absolute;
-        top: vmax(620);
-        left: vmax(80);
+        top: vmax(610);
+        left: 10%;
         font-size: vmax(40);
         font-weight: bold;
         color: white;
         text-shadow: vmax(1) vmax(1) vmax(15) black;
-        
+        line-height: 1.2em;
+        @include _1600{ top: vmax(660);}
+        @include _1440{ top: vmax(730); font-size: vmax(45);}
+        @include _1280{ top: vmax(800); font-size: vmax(50);}
+        @include _1024{ top: vmax(888); font-size: vmax(65); left: 5%;}
+        @include _768{ top: vmax(808); font-size: vmax(65);}
+        @include _600{ top: vmax(790); font-size: vmax(65);}
+        @include _480{ top: vmax(630); font-size: vmax(65);}
     }
 }
 
@@ -68,14 +118,25 @@
 }
 
 .slideActive {
-    opacity: 1;
     position: relative;
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: inherit;
-        position: relative;
+    animation: fadeIn .5s ease;
+    a{
+        border-radius: vmax(10);
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: inherit;
+            position: relative;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.3;
+    } to {
+        opacity: 1;
     }
 }
 
@@ -86,7 +147,10 @@
     width: 100%;
     height: 100%;   
     border-radius: vmax(10);
+    cursor: pointer;
 }
+
+.shadow__dark, .shadow__light  { pointer-events: none; }
 
 .shadow__dark {
     box-shadow: inset 0 0 vmax(10) black;

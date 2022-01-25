@@ -14,7 +14,6 @@ const MoviesList = (props: ListProps ) => {
     const {results} = props;
 
         return (
-            <>
             <div className={scss.moviesBlock}>
                 <div className={scss.wrapper}>      
                     <ul>
@@ -25,8 +24,6 @@ const MoviesList = (props: ListProps ) => {
                     <ScrollTopBtn />
                 </div>
             </div>
-
-            </>
 
         );
     // }

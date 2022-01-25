@@ -1,0 +1,36 @@
+.favoritesBlock, .favoritesBlock_nothing {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 2.60417vmax;
+}
+
+.favoritesBlock h2, .favoritesBlock_nothing h2 {
+  font-size: 1.25vmax;
+}
+
+.favoritesBlock h2, .favoritesBlock_nothing h2 {
+  margin-bottom: 2.60417vmax;
+}
+
+.favoritesBlock .favTextColor, .favoritesBlock_nothing .favTextColor {
+  color: white;
+}
+
+.favoritesBlock {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.favoritesBlock_nothing {
+  height: 45.78125vmax;
+}

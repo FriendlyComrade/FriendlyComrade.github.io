@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeProvider';
 import scss from './ScrollTopBtn.module.scss';
+import upArrow from '../../assets/images/upArrow.png';
+import upArrowDark from '../../assets/images/upArrowDark.png';
 
 const ScrollTopBtn = () => {
     const [scrollToTopBtnVisible, setScrollToTopBtnVisible] = useState<boolean>(false)
@@ -32,7 +34,7 @@ const ScrollTopBtn = () => {
     let targetBtn;
     if (theme === 'light') {
         targetBtn = (
-            <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-rocket-business-kiranshastry-solid-kiranshastry.png"
+            <img src={upArrow}
             onClick={btnScrollToTop}
             className={scss.btnUp}
             alt="btnToTop-img"
@@ -40,7 +42,7 @@ const ScrollTopBtn = () => {
         )
     } else {
         targetBtn = (
-            <img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-rocket-business-kiranshastry-gradient-kiranshastry.png"
+            <img src={upArrowDark}
             onClick={btnScrollToTop}
             className={scss.btnUp}
             alt="btnToTop-img"
