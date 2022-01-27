@@ -26,32 +26,7 @@ const Search = ():JSX.Element => {
     const [foundMovies, setFoundMovies] = useState<Movie[]>([]);
     const [fetching, setFetching] = useState<boolean>(false)
 
-    // useEffect(() => {
-    //     setFoundMovies([...movies.slice(0)])
-    // }, [])
-
-    // useEffect (() => {
-    //     if (fetching) {
-    //         setPageNumber(prevNumber => prevNumber + 1)
-    //         setFoundMovies([...foundMovies, ...movies])
-    //         setFetching(false)
-    //         console.log(foundMovies)
-    //     }
-    // }, [fetching])
-
-    // useEffect (() => {
-    //     document.addEventListener('scroll', scrollHandler);
-    //     return function () {
-    //         document.removeEventListener('scroll', scrollHandler);
-    //     }
-    // }, [])
-
-
-    // const scrollHandler = (e: any): void => {
-    //     if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100) {
-    //             setFetching(true)
-    //     }
-    // }
+    console.log(movies)
 
     useEffect(() => {
         setFoundMovies([...foundMovies, ...movies])
@@ -65,43 +40,39 @@ const Search = ():JSX.Element => {
             const observer = new IntersectionObserver(entries =>{
             if(entries[0]?.isIntersecting){
                 setPageNumber(prevPage => prevPage + 1)
-                if(pageNumber >= 500){
+                if(movies.length < 20){
                     if (pageEnd && pageEnd.current) {
                         observer?.unobserve(pageEnd?.current)
                     }                
                 }
             }
             },{ threshold: 0});
-            if (pageEnd && pageEnd.current) {
-                observer?.observe(pageEnd?.current)
-            }
-
+                if (pageEnd && pageEnd.current) {
+                    observer?.observe(pageEnd?.current)
+                }
         }
     },[fetching])
 
-    let searchResults;
-    if(isSuccess) {
-        searchResults = 
-            movies.length > 0 ? (
-                <>
-                    <MoviesList results={[...foundMovies]}/> 
-                </>
-            ) : (
-                <p>Nothing found..</p>
-            )
-    }
+    let nothingFound = movies.length > 0 ? (
+        <p className={theme ==='light' ? scss.searchResults : scss.searchResults__dark}>Nothing found.</p>
+    ) : null
 
     return (
-        <>  
+        <div className={scss.searchPage}>  
             <SearchBlock/>
             {searchQuery && 
-            <h3 className={theme ==='light' ? scss.searchResults: scss.searchResults__dark}>Search results</h3>
+            <h3
+            id='searchRes'
+            className={theme ==='light' ? scss.searchResults : scss.searchResults__dark}>
+                Search results
+            </h3>
             }
             {isFetching && <MainLoader theme={theme}/>}
-            {isSuccess && searchResults}
-            <li ref={pageEnd} className="observer-element"></li>  
             {isError && <ErrorMessage/>}
-        </>
+            {isSuccess && <MoviesList results={foundMovies}/>}
+            {nothingFound}
+            <li ref={pageEnd} className="observer-element"></li> 
+        </div>
     );
 };
 

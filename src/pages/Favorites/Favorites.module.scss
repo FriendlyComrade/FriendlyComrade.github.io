@@ -6,17 +6,16 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-top: vmax(50);
-    @include _600 {padding-top: 0;}
+    padding-top: 50px;
     h2 {
-        margin-bottom: vmax(50);
+        margin-bottom: 50px;
         font-size: 1.5em;
         @include _1280{font-size: 1.4em;}
         @include _1024{font-size: 1.3em;}
         @include _979{font-size: 1.6em; padding-top: vmax(90); margin-bottom: vmax(90);}
         @include _600{font-size: 1.6em; padding-top: 0; margin-bottom: vmax(90);}
     }
-    .favTextColor {color: white}
+    .favTextColor, .avTextColorNothing {color: white}
 }
 
 .favoritesBlock {
@@ -26,4 +25,8 @@
 
 .favoritesBlock_nothing {
     min-height: 90.7vh;
+    p:nth-child(2){
+        font-size: 20px;
+        margin-top: 100px;
+    }
 }
