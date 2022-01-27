@@ -16,7 +16,7 @@ if (!posterPath) {
         <>
             <img
             src={'https://images.pexels.com/photos/1446948/pexels-photo-1446948.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'}  
-            className={scss.noImage}
+            className={scss.noImageMovieItem}
             alt={title}
             />
             <strong className={scss.strong}>No image</strong>

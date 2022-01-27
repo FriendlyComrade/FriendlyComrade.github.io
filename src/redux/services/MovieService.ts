@@ -46,7 +46,6 @@ export const moviesAPI = createApi({
         //     }),
             getFoundMovies: build.query<Movie[], GetFound>({
                 query: (arg) => {
-                    console.log(arg)
                     const {page, title} = arg;
                     return {
                         url: '/search/movie',

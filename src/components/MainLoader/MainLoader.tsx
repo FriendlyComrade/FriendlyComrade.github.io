@@ -7,17 +7,17 @@ const MainLoader= (theme: ThemeValue) => {
     const override = `
         position: absolute;
         top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        left: 47.8%;
+        transform: translate(-50%, -47.8%);
         @media(max-width: 600px) {
-            top: 42%;
-            left: 42%;
-            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 40%;
+            transform: translate(-50%, -47.8%);
         }
         @media(max-width: 300px) {
-            top: 40%;
+            top: 50%;
             left: 32%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -47.8%);
         }
     `;
 

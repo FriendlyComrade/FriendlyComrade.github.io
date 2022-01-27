@@ -19,7 +19,7 @@
             position: relative;
             display: flex;
             justify-content: space-around;
-            width: 100%;
+            min-width: 100%;
             height: vmax(800);
             background-size: cover;
             border-radius: vmax(10);
@@ -56,6 +56,12 @@
                     border-radius: vmax(10);
                     box-shadow: 0 0 vmax(5) 0 rgba(255, 255, 255, 0.6);
                     @include _886 { height: 65%; }
+                }
+                .noImageText {
+                    color: white;
+                    font-size: 20px;
+                    position: absolute;
+                    top: 55%;
                 }
                 .favoriteConteiner {
                     display: flex;
@@ -181,4 +187,9 @@
             @include _350 { margin-bottom: vmax(150); height: vmax(1220); width: 100%;};
         }
 
+        // .noImageText {
+        //     position: ab;
+        //     top: 0;
+        //     left: 0;
+        // }
 

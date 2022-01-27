@@ -4,8 +4,8 @@ import { ThemeContext } from '../../context/ThemeProvider';
 import scss from './SearchHistoryList.module.scss';
 
 type HistoryResults = {
-    path: string;
-    text: string;
+    path: string | any;
+    text: string | any;
   };
   
   type SearchHistoryListProps = {
@@ -15,7 +15,7 @@ type HistoryResults = {
 const SearchHistoryList = (props: SearchHistoryListProps) => {
     const {theme} = useContext(ThemeContext)
     const { results } = props;
-  
+
     return (
       <ol className={theme === "light" ? scss.search_history__list : scss.search_history__list_dark}>
         {results.map(({ path, text }) => (

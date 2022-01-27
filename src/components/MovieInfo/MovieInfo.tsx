@@ -80,19 +80,43 @@ function MovieInfo (movie:MovieInfoType){
         trailer = null 
     }
 
+    let image;
+    if (!posterPath) {
+    image = (
+        <>
+            <img
+            src={'https://images.pexels.com/photos/1446948/pexels-photo-1446948.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'}  
+            className={scss.movieInfoImg}
+            alt={title}
+            />
+            <figcaption className={scss.noImageText}>No image</figcaption>
+        </>
+    )
+    } else {
+    image = (
+        <img 
+        src={`${TMDB_IMAGE_PATH}${posterPath}`} 
+        className={scss.movieInfoImg}
+        alt={`${title}-img`}
+        />
+    )
+    }
+
+
         return (
             <div className={scss.infoConteiner}>
                 <div 
                 className={theme === "light" ? scss.movieDescBlock : scss.movieDescBlock__dark}
-                style={{backgroundImage: `url(${TMDB_IMAGE_PATH}${backdropPath})`}}
+                style={backdropPath ? {backgroundImage: `url(${TMDB_IMAGE_PATH}${backdropPath})`} :
+                    {backgroundImage: `url(https://images.unsplash.com/photo-1514306191717-452ec28c7814?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80})`}}
                 >
-                    <div className={scss.movieInfoImgWrapper}>
-                        
-                        <img 
+                    <div className={scss.movieInfoImgWrapper}>                        
+                        {/* <img 
                         src={`${TMDB_IMAGE_PATH}${posterPath}`} 
                         className={scss.movieInfoImg}
                         alt={`${title}-img`}
-                        />
+                        /> */}
+                        {image}
                         <h3>{title}</h3>
                         <div className={scss.favoriteConteiner}>
                             <img onClick={toggleFavorites} src={favIcon} alt="favorite-img"/>
