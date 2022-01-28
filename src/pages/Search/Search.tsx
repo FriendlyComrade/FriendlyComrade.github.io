@@ -25,9 +25,6 @@ const Search = ():JSX.Element => {
     const [foundMovies, setFoundMovies] = useState<Movie[]>([]);
     const [fetching, setFetching] = useState<boolean>(false)
 
-    console.log(isSuccess)
-    console.log(movies)
-
     useEffect(() => {
         if (searchQuery) {
             setPageNumber(1)

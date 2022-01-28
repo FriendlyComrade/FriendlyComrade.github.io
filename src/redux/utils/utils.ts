@@ -19,7 +19,6 @@ const addFavLocalStore = (currentUserID: number, movieId: number) => {
   });
   const newUserListStringified = JSON.stringify(newUserList);
   localStorage.setItem("user", newUserListStringified);
-  console.log(localStorage.getItem("user"))
 };
 
 const removeFavLocalStore = (currentUserID: number, movieId: number) => {
