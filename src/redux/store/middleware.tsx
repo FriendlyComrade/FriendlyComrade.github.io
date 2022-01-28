@@ -9,7 +9,6 @@ const addFavoritesToLocalStoreMiddleware: Middleware =
     if (userActionList.includes(action.type)) {
       switch (action.type) {
         case userActionList[0]: {
-          console.log('12')
           const getJsonUserFromLocalStore = JSON.parse(
             localStorage.getItem("user") || "[]"
           );
@@ -18,8 +17,6 @@ const addFavoritesToLocalStoreMiddleware: Middleware =
           });
           console.log(getMailList[0])
           if (getMailList[0].includes(state.userSlice.email)) {
-            console.log('yes')
-            // console.log('')
             addFavLocalStore(state.userSlice.id, action.payload.movie);
           }
           break;

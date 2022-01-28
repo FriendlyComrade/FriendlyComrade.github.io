@@ -35,15 +35,6 @@ export const moviesAPI = createApi({
             transformResponse: (response: BigApiResponse) =>
                 bigMapApiResponse(response)
         }),
-        // getFoundMovies: build.query<Movie[], string>({
-        //     query: (title: string) => ({
-        //         url: '/search/movie',
-        //         params: {
-        //             api_key: API_KEY,
-        //             query: title
-        //         }
-                
-        //     }),
             getFoundMovies: build.query<Movie[], GetFound>({
                 query: (arg) => {
                     const {page, title} = arg;

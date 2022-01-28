@@ -64,7 +64,6 @@ const AuthForm = ({isLoginPage}:AuthFormProps) => {
             item => item.email === userEmail && item.password === userPassword
         )
         if (foundUser) {
-            console.log(foundUser)
             loginSetStates(foundUser)
             setUserName("")
             setUserEmail("")

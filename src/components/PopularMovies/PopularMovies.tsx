@@ -1,8 +1,7 @@
-import React, {  useEffect, useState, useRef } from "react";
+import {  useEffect, useState, useRef } from "react";
 import {moviesAPI} from "../../redux/services/MovieService";
 import { Movie } from "../../types/Movie";
 import MoviesList from "../MoviesCards";
-import scss from './PopularMovies.module.scss'
 
 const PopularMovies = () => {
     const [pageNumber, setPageNumber] = useState(1)
