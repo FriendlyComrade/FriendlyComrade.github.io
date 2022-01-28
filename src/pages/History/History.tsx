@@ -23,8 +23,9 @@ const History = () => {
         text: searchText?.query || "" 
     }))
 
-    const filteredHistoryResult = history.reduce((uniq:historyResProps, value:historyResProps) => uniq.hasOwnProperty(value.text.toLowerCase())
-    ? uniq : {...uniq, [value.text.toLowerCase()]: value.path}, {} as historyResProps)
+    const filteredHistoryResult = history.reduce((uniq:historyResProps, value:historyResProps) => 
+    uniq.hasOwnProperty(value.text.toLowerCase()) ? uniq 
+    : {...uniq, [value.text.toLowerCase()]: value.path}, {} as historyResProps)
 
     let historyResult:historyResProps[] = [];
     for (let [title, query] of Object.entries(filteredHistoryResult)){

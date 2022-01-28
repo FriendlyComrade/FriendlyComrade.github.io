@@ -21,22 +21,27 @@ const Search = ():JSX.Element => {
         isSuccess,
         isError
     } = useGetFoundMoviesQuery({page:pageNumber, title: searchQuery}, {skip: !searchQuery}) 
-    // , {skip: !searchQuery}
 
     const [foundMovies, setFoundMovies] = useState<Movie[]>([]);
     const [fetching, setFetching] = useState<boolean>(false)
 
+    console.log(isSuccess)
     console.log(movies)
 
     useEffect(() => {
+        if (searchQuery) {
+            setPageNumber(1)
+            setFoundMovies([])
+        }
+    }, [searchQuery])
+
+    useEffect(() => {
         setFoundMovies([...foundMovies, ...movies])
-        setFetching(true)
-    }, [pageNumber])
+    }, [pageNumber, movies])
 
     const pageEnd = useRef<HTMLLIElement>(null);
 
     useEffect(()=>{
-        if(fetching){
             const observer = new IntersectionObserver(entries =>{
             if(entries[0]?.isIntersecting){
                 setPageNumber(prevPage => prevPage + 1)
@@ -50,7 +55,6 @@ const Search = ():JSX.Element => {
                 if (pageEnd && pageEnd.current) {
                     observer?.observe(pageEnd?.current)
                 }
-        }
     },[fetching])
 
     let nothingFound = movies.length > 0 ? (
@@ -69,8 +73,8 @@ const Search = ():JSX.Element => {
             }
             {isFetching && <MainLoader theme={theme}/>}
             {isError && <ErrorMessage/>}
-            {isSuccess && <MoviesList results={foundMovies}/>}
-            {nothingFound}
+            {isSuccess && <MoviesList results={foundMovies}/>} 
+            {/* {nothingFound} */}
             <li ref={pageEnd} className="observer-element"></li> 
         </div>
     );

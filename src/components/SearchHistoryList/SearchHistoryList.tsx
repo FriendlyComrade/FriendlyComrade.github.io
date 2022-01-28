@@ -4,8 +4,8 @@ import { ThemeContext } from '../../context/ThemeProvider';
 import scss from './SearchHistoryList.module.scss';
 
 type HistoryResults = {
-    path: string | any;
-    text: string | any;
+    path: string;
+    text: string;
   };
   
   type SearchHistoryListProps = {

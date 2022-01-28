@@ -38,6 +38,7 @@ const Slider = ():JSX.Element => {
                             <div 
                             className={index === current ? scss.sliderDot__active : scss.sliderDot}
                             onClick={() => handleActiveDot(index)}
+                            key={index}
                             >
                             </div>
                         )}

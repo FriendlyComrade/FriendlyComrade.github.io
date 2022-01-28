@@ -14,7 +14,7 @@ const persistConfig = {
   blacklist: [moviesAPI.reducerPath]
 }
 
-const rootReducer = combineReducers({ 
+const rootReducer = combineReducers({
   historySlice: historySlice.reducer,
   favoritesSlice: favoritesSlice.reducer,
   userSlice: userReducer, 
