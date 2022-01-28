@@ -15,7 +15,6 @@ const addFavoritesToLocalStoreMiddleware: Middleware =
           const getMailList = getJsonUserFromLocalStore.map((user: any) => {
             return Object.values(user);
           });
-          console.log(getMailList[0])
           if (getMailList[0].includes(state.userSlice.email)) {
             addFavLocalStore(state.userSlice.id, action.payload.movie);
           }
