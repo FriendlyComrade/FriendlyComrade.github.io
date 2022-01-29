@@ -71,8 +71,8 @@
         @include _1440{ margin-top: vmax(770); }
         @include _1280{ margin-top: vmax(850); }
         @include _1024{ margin-top: vmax(960); }
-        @include _480{ margin-top: 15rem; }
-        @include _350{ margin-top: 12rem; }
+        @include _480{ margin-top: 390px; }
+        @include _350{ margin-top: 280px; }
 
         .sliderDot, .sliderDot__active {
             margin: vmax(5);
@@ -84,7 +84,7 @@
             @include _1280{ width: vmax(26); height: vmax(22);  margin: vmax(7); }
             @include _1024{ width: vmax(30); height: vmax(26);  margin: vmax(10); }
             @include _886{ width: vmax(30); height: vmax(26);  margin: vmax(12); }
-            @include _480{width: 15px; height: 13px;  margin: 5px;}
+            @include _480{width: 13px; height: 13px;  margin: 5px;}
             @include _350{width: 10px; height: 10px;  margin: 4px;}
         }
         .sliderDot { background-color: rgba(255, 255, 255, 0.7); }
