@@ -85,7 +85,7 @@
             @include _1024{ width: vmax(30); height: vmax(26);  margin: vmax(10); }
             @include _886{ width: vmax(30); height: vmax(26);  margin: vmax(12); }
             @include _480{width: 13px; height: 13px;  margin: 5px;}
-            @include _350{width: 10px; height: 10px;  margin: 4px;}
+            @include _350{width: 12px; height: 10px;  margin: 3px;}
         }
         .sliderDot { background-color: rgba(255, 255, 255, 0.7); }
         .sliderDot__active { background-color: darkred; }

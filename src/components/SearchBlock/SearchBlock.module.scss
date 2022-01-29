@@ -69,18 +69,19 @@
                     padding-left: vmax(40);
                 }
                 @include _480{ 
-                    width: 14em; 
+                    width: 90vw; 
                     // height: vmax(90); 
-                    border-radius: vmax(50);
+                    border-radius: 30px;
                     font-size: 1.5em;
-                    padding-left: vmax(40);
+                    padding-left: 25px;
+                    padding-right: 90px;
                 }
                 @include _350{ 
-                    width: 10em; 
+                    width: 95vw; 
                     // height: vmax(90); 
-                    border-radius: vmax(50);
-                    font-size: 1.5em;
-                    padding-left: vmax(40);
+                    // border-radius: vmax(50);
+                    // font-size: 1.5em;
+                    // padding-left: vmax(40);
                 }
             }
             button {
@@ -112,6 +113,11 @@
                     border-top-right-radius: vmax(50);
                     border-bottom-right-radius: vmax(50);
                 }
+                @include _480 {
+                    width: 80px;
+                    border-top-right-radius: 30px;
+                    border-bottom-right-radius: 30px;
+                }
                 svg {
                     margin-top: vmax(2.5);
                     width: vmax(27);
@@ -122,6 +128,8 @@
                     @include _1024{ height: vmax(50); width: vmax(50);}
                     @include _768{ height: vmax(60); width: vmax(60); }
                     @include _600{ height: vmax(65); width: vmax(65); }
+                    @include _480{ height: 30px; width: 30px; }
+                    // @include _480{ height: 30px; width: 30px; }
                 }
             }
             button:hover {
