@@ -17,6 +17,7 @@
     "@types/react-router": "^5.1.17",
     "@types/redux-persist": "^4.3.1",
     "eslint": "^7.11.0",
+    "gh-pages": "^3.2.3",
     "history": "^5.2.0",
     "node-sass": "^4.14.1",
     "react": "^17.0.2",
