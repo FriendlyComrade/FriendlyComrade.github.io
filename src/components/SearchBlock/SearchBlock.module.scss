@@ -15,8 +15,8 @@
     @include _1024{ height: vmax(200); }
     @include _886 { height: vmax(250);}
     @include _768 { height: vmax(300);}
-    @include _600 { height: vmax(400);}
-    @include _480 { height: vmax(480);}
+    @include _600 { height: 170px;}
+    // @include _480 { height: vmax(480);}
     .wrapper {
         display: flex;
         justify-content: center;
@@ -63,21 +63,21 @@
                 }
                 @include _600{ 
                     width: 23em; 
-                    height: vmax(90); 
+                    height: 40px; 
                     border-radius: vmax(50);
                     font-size: vmax(42);
                     padding-left: vmax(40);
                 }
                 @include _480{ 
                     width: 14em; 
-                    height: vmax(90); 
+                    // height: vmax(90); 
                     border-radius: vmax(50);
                     font-size: 1.5em;
                     padding-left: vmax(40);
                 }
                 @include _350{ 
                     width: 10em; 
-                    height: vmax(90); 
+                    // height: vmax(90); 
                     border-radius: vmax(50);
                     font-size: 1.5em;
                     padding-left: vmax(40);
@@ -92,6 +92,7 @@
                 border-top-right-radius: vmax(20);
                 border-bottom-right-radius: vmax(20);
                 background-color: rgba(105, 12, 59, 0.479);
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0.0);
                 @include _1600{ width: vmax(65);}
                 @include _1440{ width: vmax(70);}
                 @include _1280{ 

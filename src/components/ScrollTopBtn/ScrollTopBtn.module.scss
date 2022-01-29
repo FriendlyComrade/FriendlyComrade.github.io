@@ -9,6 +9,7 @@
     height: vmax(40);
     background-color: inherit;
     cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     @include _1280{
         width: vmax(65);
         height: vmax(65);
