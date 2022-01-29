@@ -16,8 +16,8 @@
     @include _1024{ height: vmax(1170); margin-top: vmax(25);}
     @include _886{ height: vmax(1250); margin-top: vmax(30);}
     @include _768{ height: vmax(1150); margin-top: vmax(35);}
-    @include _600{ height: vmax(1100); margin-top: vmax(40);}
-    @include _480 { height: vmax(1000); margin-top: vmax(35); }
+    @include _600{ height: 500px; margin-top: 15px;}
+    @include _350 { height: 350px; }
 
     .wrapper {
         display: flex;
@@ -37,6 +37,7 @@
     position: relative;
     user-select: none;
     cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     .leftArrow, .rightArrow {
         color: rgba(255, 255, 255, .6);
         position: absolute;
@@ -48,7 +49,7 @@
         @include _1440{ font-size: vmax(133); }
         @include _1280{font-size: vmax(150); }
         @include _1024{font-size: vmax(200); }
-        @include _600{font-size: vmax(150); }
+        @include _600{font-size: 70px; }
     }
     .leftArrow:hover, .rightArrow:hover {
         color: rgba(255, 255, 255, .8);        
@@ -70,7 +71,8 @@
         @include _1440{ margin-top: vmax(770); }
         @include _1280{ margin-top: vmax(850); }
         @include _1024{ margin-top: vmax(960); }
-        @include _480{ margin-top: 97%; }
+        @include _480{ margin-top: 15rem; }
+        @include _350{ margin-top: 12rem; }
 
         .sliderDot, .sliderDot__active {
             margin: vmax(5);
@@ -82,7 +84,8 @@
             @include _1280{ width: vmax(26); height: vmax(22);  margin: vmax(7); }
             @include _1024{ width: vmax(30); height: vmax(26);  margin: vmax(10); }
             @include _886{ width: vmax(30); height: vmax(26);  margin: vmax(12); }
-            @include _480{width: vmax(30); height: vmax(26);  margin: vmax(12);}
+            @include _480{width: 15px; height: 13px;  margin: 5px;}
+            @include _350{width: 10px; height: 10px;  margin: 4px;}
         }
         .sliderDot { background-color: rgba(255, 255, 255, 0.7); }
         .sliderDot__active { background-color: darkred; }
@@ -109,7 +112,8 @@
         @include _1024{ top: vmax(888); font-size: vmax(65); left: 5%;}
         @include _768{ top: vmax(808); font-size: vmax(65);}
         @include _600{ top: vmax(790); font-size: vmax(65);}
-        @include _480{ top: vmax(630); font-size: vmax(65);}
+        @include _480{ top: 300px; font-size: 32px;}
+        @include _350{ top: 220px; font-size: 24px;}
     }
 }
 

@@ -14,10 +14,12 @@
     @include _1024 { height: vmax(160); }
     @include _886 { height: vmax(200); }
     @include _600 { height: vmax(250); }
+    @include _480 {height: 100px;}
     .wrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         div:nth-child(1){
             width: vmax(170);
             height: 100%;
@@ -36,7 +38,6 @@
                 @include _886 { width: 80%; height: 100%; margin-left: vmax(30);}
                 @include _600 { width: 100%; height: 100%; margin-left: vmax(35);}
                 @include _480 {display: none;}
-
             }
             .logoTextDark, .logoTextLight {
                 font-size: vmax(42);
@@ -50,8 +51,8 @@
                 @include _1024 { font-size: vmax(80); margin-left: vmax(20);}
                 @include _886 { font-size: vmax(90); margin-left: vmax(25);}
                 @include _600 { font-size: vmax(100); margin-left: vmax(40);}
-                @include _480 { font-size: vmax(131); margin-left: vmax(60);}
-                @include _350 { font-size: vmax(141); margin-left: vmax(60);}
+                @include _480 { font-size: 60px; margin-left: 33px;}
+                @include _350 { font-size: 55px; margin-left: 20px;}
             }
             .logoTextLight{
                 color: darkred;
@@ -71,6 +72,8 @@
             @include _979 {display: flex; margin-left: 63%; }
             @include _768 { margin-left: 63%; }
             @include _600 { margin-left: 53%; width: 3.5em; }
+            @include _480 { margin-left: 210px; width: 3.5em; }
+            @include _350 { margin-left: 130px; width: 3.5em; }
         }
 
         .headerRightSideContent {

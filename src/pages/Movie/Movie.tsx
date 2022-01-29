@@ -10,7 +10,6 @@ import MainLoader from '../../components/MainLoader/MainLoader';
 
 
 const Movie = () => {
-    console.log('gd')
     const { theme } = useContext(ThemeContext)
     const {id = 0} = useParams();
     const {data: film, isFetching, isSuccess, isError} = useGetMovieInfoQuery(+id)

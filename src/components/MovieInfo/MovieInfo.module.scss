@@ -69,6 +69,7 @@
                     height: vmax(90);
                     justify-content: center;
                     align-items: center;
+                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
                     @include _1440 { margin-top: vmax(5); }
                     @include _1280 { margin-top: vmax(10); }
                     @include _1024 { margin-top: vmax(15); }
@@ -169,7 +170,7 @@
                 @include _979 { font-size: 1.5em; };
                 @include _768 { padding: 0 vmax(180);};
                 @include _600 { padding: 0 vmax(90); line-height: 1.6em; };
-                @include _480 { padding: 0 vmax(30); line-height: 1.6em; };
+                @include _480 { padding: 0 vmax(50); line-height: 1.6em; };
             }
         }
 
